@@ -6,11 +6,11 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hi there " .. e.other:GetName() .. "! I give three sections of the test of songs, Denise does the rest. Do you wish to take the test of pitch, voice, or tone?");
 	elseif(e.message:findi("pitch")) then 	--Bard test of pitch
-		e.self:Say("The pitch that we sing and play has a great affect on those that listen.  Keep this in mind Gendal, and you shall always be welcome in taverns and inns.  Now if you return to me Phosphoric Globe, a Shimmering Diamond, and crude wooden flute I will give to you Ervaj's Flute of Flight.");
+		e.self:Say("The pitch that we sing and play has a great affect on those that listen.  Keep this in mind " .. e.other:GetName() .. ", and you shall always be welcome in taverns and inns.  Now if you return to me Phosphoric Globe, a Shimmering Diamond, and crude wooden flute I will give to you Ervaj's Flute of Flight.");
 	elseif(e.message:findi("voice")) then 	--bard test of voice
 		e.self:Say("The sweet sound rising forth from our throats are what makes us truly great.  Go forth and give voice to your songs, and return to me a platinum disc, a music box, and a light woolen mantle. If you do this I shall give you the Songweaver's Mantle. Good luck!");
 	elseif(e.message:findi("tone")) then 	--bard test of tone
-		e.self:Say("Tone is important to all singers. Prove to me that you can keep your tone even and pure by bringing me an Ochre Tessera, a songbird statuette, and a light woolen cloak. If you do this I will give you the Mask of the Songbird.");
+		e.self:Say("Tone is important to all singers. Prove to me that you can keep your tone even and pure by bringng me an ochre tessera, a songbird statuette, and a light woolen mask. If you do this, I will give you the mask of song.");
 	end
 end
 
@@ -24,7 +24,7 @@ function event_trade(e)
 		e.self:Say("Excellent! Take this as your reward.");
 		e.other:QuestReward(e.self,0,0,0,0,27721,100000); --mantle of the songweaver
 		eq.depop();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 20933, item2 = 20823, item3 = 20820})) then --bard test of tone using ochre tessera, songbird statuette, light wooden cloak
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20933, item2 = 20821, item3 = 20820})) then --bard test of tone using ochre tessera, songbird statuette, light woolen mask
 		e.self:Say("Excellent! Take this as your reward.");
 		e.other:QuestReward(e.self,0,0,0,0,27720,100000); --mask of song
 		eq.depop();

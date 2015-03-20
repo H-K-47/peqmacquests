@@ -7,7 +7,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail and well met " .. e.other:GetName() .. "! I give the second half of the test of songs. If you are ready, choose between the tests of brass, wind, and harmony.");
 	elseif(e.message:findi("brass")) then	--Bard Test of Brass
-		e.self:Say("Then bring back to me an Efreeti War Horn, a Saffron Spiroc Feather, Adamintium Bands, and a Glowing Diamond. Then I will give you the horn of disaster.");
+		e.self:Say("Then bring back to me an efreeti war horn, a saffron spiroc feather, adamintium bands, and a glowing diamond.");
 	elseif(e.message:findi("wind")) then	--Bard Test of Wind
 		e.self:Say("Bring me an imp statuette, a dull stone, and an amulet of woven hair. Then I will give you the fae amulet.");
 	elseif(e.message:findi("harmony")) then	--Bard Test of Harmony
