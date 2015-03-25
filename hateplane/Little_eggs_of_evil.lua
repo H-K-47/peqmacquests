@@ -6,10 +6,10 @@ function event_spawn(event)
 end
 
 function event_enter(event)
-	local numSpawns = math.random(3, 7);
+	local numSpawns = math.random(3, 5);
 	
 	for i = 1, numSpawns do
-		eq.spawn2(	76386,
+		eq.spawn2(	76386,		-- evil little imp
 					0,
 					0,
 					event.self:GetX()+math.random(-5,5),
