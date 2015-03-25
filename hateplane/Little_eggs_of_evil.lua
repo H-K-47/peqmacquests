@@ -1,14 +1,15 @@
 function event_spawn(event)
 	local xloc = event.self:GetX();
 	local yloc = event.self:GetY();
-	eq.set_proximity(xloc - 45, xloc + 45, yloc - 45, yloc + 45);
+	local zloc = event.self:GetZ();
+	eq.set_proximity(xloc - 45, xloc + 45, yloc - 45, yloc + 45, zloc - 45, zloc + 45);
 end
 
 function event_enter(event)
-	local numSpawns = math.random(3, 5);
+	local numSpawns = math.random(3, 7);
 	
 	for i = 1, numSpawns do
-		eq.spawn2(	76386,		-- evil little imp
+		eq.spawn2(	76386,
 					0,
 					0,
 					event.self:GetX()+math.random(-5,5),
