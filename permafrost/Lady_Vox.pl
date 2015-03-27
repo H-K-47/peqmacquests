@@ -64,9 +64,9 @@ sub EVENT_TIMER {
 }
 
 sub WIPE_AGGRO {
-  $npc->BuffFadeAll();
-  $npc->WipeHateList();
-  $npc->SetHP($npc->GetMaxHP());
+  #$npc->BuffFadeAll();
+  #$npc->WipeHateList();
+  #$npc->SetHP($npc->GetMaxHP());
   $npc->GMMove($SpawnX,$SpawnY,$SpawnZ,$SpawnH);
   quest::stoptimer(1);
   quest::setnexthpevent(96);
