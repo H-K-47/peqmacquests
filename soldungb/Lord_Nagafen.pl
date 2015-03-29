@@ -67,8 +67,8 @@ sub WIPE_AGGRO {
   #$npc->WipeHateList();
   #$npc->SetHP($npc->GetMaxHP());
   $npc->GMMove($SpawnX,$SpawnY,$SpawnZ,$SpawnH);
-  quest::stoptimer(1);
-  quest::setnexthpevent(96);
+  #quest::stoptimer(1);
+  #quest::setnexthpevent(96);
 }
 
 # EOF zone: soldungb ID: 32040 NPC: Lord_Nagafen
