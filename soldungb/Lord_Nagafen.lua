@@ -16,7 +16,7 @@ end
 
 function event_enter(e)
 	if(e.other:GetLevel() > 52 and e.other:Admin() < 80) then
-		e.other:Message(0,"Lord Nagafen tells you, 'I will not fight you, but I will banish you!'");
+		e.other:Message(4,"I will not fight you, but I shall banish you!");
 		e.other:MovePC(27,534,913,55,0); 
 	end
 end
@@ -38,7 +38,7 @@ function event_timer(e)
 			e.self:ForeachHateList(
 				function(ent, hate, damage, frenzy)
 					if(ent:IsClient()) then
-						ent:CastToClient():Message(0,"Lord Nagafen tells you, 'I will not fight you, but I will banish you!'");
+						ent:CastToClient():Message(4,"I will not fight you, but I shall banish you!");
 						ent:CastToClient():MovePC(27,534,913,55,0);
 					end
 				end,
