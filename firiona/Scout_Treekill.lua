@@ -1,8 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Emote("holds a cracked monocle up to his squinty eye. 'I say!! A talking bear!! Squire Fuzzmin, come and take a gander at this rare find. The wonders never cease in the land of Kunark!!'");
-		eq.set_global("hobble",e.self:GetID(),3,"F");   -- Set global hobble with Sir_Hobble's NPC ID so Squire_Fuzzmin can follow
-		eq.unique_spawn(84312,0,0,1985,-2243,-75);      -- Spawn Squire_Fuzzmin for Wurmslayer quest
+		e.self:Emote("has a massive scar on his face.  'Hail, and welcome to the outpost of Firiona Vie!  If you plan on exploring, I suggest you get well equipped.  There are no cities beyond here.  I would also suggest joining the next group heading out on an expedition.  This is no place to travel alone.'");
+		e.self:DoAnim(67);
 	end
 end
 
@@ -11,9 +10,6 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
--- For Wurmslayer quest
--- Quest depends on Squire_Fuzzmin in Firiona for complete functionality
--- Qadar
 -------------------------------------------------------------------------------------------------
 -- Converted to .lua using MATLAB converter written by Stryd and manual edits by Speedz
 -- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
