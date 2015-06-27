@@ -10,7 +10,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 1761})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1761})) then
 		e.self:Say("Not bad, " .. e.other:GetName() .. ". Here is your reward. If you slay enough of these dogs, Sheltuin may have a more important task for you to perform.");
 		local random_result = math.random(10);
 		if(random_result == 1) then

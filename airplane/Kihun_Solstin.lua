@@ -10,7 +10,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 20764, item2 = 28043, item3 = 2463})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20764, item2 = 28043, item3 = 2463})) then
 		e.self:Say("If you have obtained the other, lesser Elements, go speak with The Master of Elements, who is now waiting for you. I wish you luck. If you have not completed all the tasks set for you, let me know, and I shall let you see the Master.");
 		e.other:QuestReward(e.self,0,0,0,0,28033,5000);
 		eq.unique_spawn(71040,0,0,604.5,1346.3,-766,0); 	--spawn the master of elements
