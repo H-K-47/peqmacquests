@@ -2,9 +2,9 @@
 function event_death_complete(e)
 	local chance_spawn = math.random(100);
 	if(chance_spawn <= 80) then
-		eq.spawn2(90005,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(90009,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	else
-		eq.spawn2(eq.ChooseRandom(90048,90177,90083,90179,90091,90181),0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.unique_spawn(90013,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	end
 end
 
