@@ -1,10 +1,10 @@
 -- Part of SK Epic 1.0
 function event_spawn(e)
-	e.self:Say("Young one, you cannot fathom how long it has been since I breathed air and felt flesh on my bones. I told you I would show you a weapon that would make you the most powerful of your kind. I said nothing of giving it to you. Feast your eyes on Innoruuk's Curse, mortal! Thank you for your service.");
+	eq.set_timer("Depop", 1800000);
 end
 
 function event_death_complete(e)
-	eq.spawn2(90189,0,0,28.1,1.4,7,192.5); ----Marl Kastane
+	eq.spawn2(90016,0,0,28.1,1.4,7,192.5); ----Marl Kastane
 end
 
 function event_trade(e)
@@ -12,6 +12,10 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+
+function event_timer(e)
+	eq.depop();
+end
 -- Quest by mystic414
 -------------------------------------------------------------------------------------------------
 -- Converted to .lua using MATLAB converter written by Stryd and manual edits by Speedz
