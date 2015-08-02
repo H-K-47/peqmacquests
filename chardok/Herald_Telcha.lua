@@ -61,6 +61,7 @@ function event_trade(e)
 			e.other:Faction(281,3)
 			e.other:Faction(121,-1);
 			e.other:QuestReward(e.self,0,0,0,0,0,8000);
+			skin = skin - 1;
 		until skin == 0;
 	end
 
@@ -71,6 +72,7 @@ function event_trade(e)
 			e.other:Faction(281,3)
 			e.other:Faction(121,-1);
 			e.other:QuestReward(e.self,0,0,0,0,0,8000);
+			salt = salt -1;
 		until salt == 0;
 	end
 	
