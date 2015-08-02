@@ -41,14 +41,17 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135})) then -- Green Goblin Skin 1x
 		skin = 1;
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 6476, item2 = 5728})) then -- Head of Skargus & Di'Zok Signet of Service
-		e.self:Say("Ah hah! You are notworthy indeed amongst the servants of the Sarnak! Perhaps I should have you killed, before your deeds outdo mine.. Hmm..");
-		e.self:Say("Guards! Guards! Haha, do not panic menial being, in fact I am most impressed with your service. Here is the ring I promised you in exchange for your efforts.");
-		e.other:Faction(23,50);
-		e.other:Faction(384,-30);
+		e.self:Say("Ah hah! You are notworthy indeed amongst the servants of the Sarnak! Perhaps I should have you killed, before your deeds outdo mine.. Hmm.. Guards! Guards! Haha, do not panic menial being, in fact I am most impressed with your service. Here is the ring I promised you in exchange for your efforts.");
+		e.other:Faction(23,500);
+		e.other:Faction(281,500)
+		e.other:Faction(121,-200);
 		eq.delete_global("RegalBandBathezid");
+		e.other:SummonItem(5728);
 		e.other:QuestReward(e.self,0,0,0,0,5727,50000); -- 5727  Regal Band of Bathezid
-	elseif((e.other:GetFaction(e.self)==1) and item_lib.check_turn_in(e.self, e.trade, {item1 = 5727, item2 = 5728})) then -- Regal band of Bathezid
+	elseif((e.other:GetFaction(e.self)==1) and item_lib.check_turn_in(e.self, e.trade, {item1 = 5727})) then -- Di'Zok Signet of Service
 		e.other:QuestReward(e.self,0,0,0,0,5727); -- 5727  Regal Band of Bathezid
+	elseif((e.other:GetFaction(e.self)==1) and item_lib.check_turn_in(e.self, e.trade, {item1 = 5728})) then -- Regal band of Bathezid
+		e.other:QuestReward(e.self,0,0,0,0,5728); -- 5727  Regal Band of Bathezid
 	end
 
 	if(skin > 0) then 
