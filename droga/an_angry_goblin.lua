@@ -28,7 +28,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 11) then
 		e.self:Shout("I have you now Skargus, you traitor! Even now I'm taking this report of slave-trading to the chief! Your days here are at an end!");
-		eq.unique_spawn(92006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),125);
+		eq.unique_spawn(81006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),125);
 		eq.depop_with_timer();
 	end
 end
