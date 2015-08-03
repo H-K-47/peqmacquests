@@ -5,7 +5,7 @@
 --   at 1 : you gave the Signet of Service to the goblin traitor
 
 function event_say(e)
-	if(e.self:HasItem(5728)) then -- we handed the Signet of Service yet
+	if(e.other:HasItem(5728)) then -- we handed the Signet of Service yet
 		-- the goblin won't talk to the player unless we did the beginning of the quest
 		if(e.message:findi("hail")) then
 			e.self:Say("'Go away, my life is miserable enough!' The angry goblin looks at you more closely, his rage fading for a moment. 'Are you here with the evidence I was promised? Give it to me if you have it.'");

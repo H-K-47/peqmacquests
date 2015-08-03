@@ -10,7 +10,7 @@ function event_say(e)
 			e.self:Say("Serve the Sarnak do ya? You the one they say they send? I don't know that I believe ya, show a token. Humm show me ya ring if ya got it.");
 		elseif(e.message:findi("plan")) then
 			e.self:Say("Alrighty, listen listen. Skargus used to be a low rankin' nogood. He made a fake story 'bout Gragbar who was the warlord and caused him much trouble with the chief. Gragbar was cast down, chief made Skargus the warlord now. Gragbar is very angry, would take back his position and kill Skargus if he get [evidence] of his treachery.");
-		elseif(e.message:findi("evidence") and e.self:HasItem(5728)) then
+		elseif(e.message:findi("evidence") and e.other:HasItem(5728)) then
 			e.self:Emote("makes a terrible face, then spits on the ground before continuing. 'Gragbar are workin' with the Iksar, bleh Iksar. He sellin' goblin troops as slaves to Cabilis when he can, sayin' they died in battle at the lake. If we get evidence of that, we get Skargus and kill him. You find Sarnak here in the Frontier mountains, he knows where we get evidence from. Give him this note from me, and he help ya. Off with ya now, before I get seen with ya.'");
 			e.other:QuestReward(e.self,0,0,0,0,6472); -- 6472  Traitor's note
 		end
