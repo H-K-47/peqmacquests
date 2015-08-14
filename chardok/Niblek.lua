@@ -2,9 +2,9 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I Niblek. You want something from Niblek?  Niblek find treasures in walls. Niblek like to trade treasures.");
-	elseif(e.message:findi("treasures")) then
+	elseif(e.message:findi("treasure")) then
 		e.self:Say("Niblek find piece of old jewelry! It very old, probably has much power!");
-	elseif(e.message:findi("want")) then
+	elseif(e.message:findi("jewelry")) then
 		e.self:Say("Niblek likes shiny tings very much! You bring Niblek two shiny tings! Niblek has seen black sapphire and ruby! Niblek likes them very much!");
 	end
 end
