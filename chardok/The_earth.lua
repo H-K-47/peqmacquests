@@ -7,6 +7,6 @@ end
 
 function event_enter(e)
 	e.self:Emote("at your feet erupts!");
-	eq.spawn2(eq.ChooseRandom(103158,103158,103159),0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetY(),e.self:GetHeading());
+	eq.spawn2(eq.ChooseRandom(103158,103158,103159),0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 	eq.depop_with_timer();
 end
