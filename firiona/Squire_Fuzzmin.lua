@@ -18,9 +18,9 @@ function event_say(e)
 		e.self:Say("Yawn.. Oh!! Hello. Don't mind the rusty old tin can. Sir Hobble is on a [quest] of sorts. I tell you, I would leave if he did not pay good wages to carry his equipment.");
 	elseif(e.message:findi("quest")) then
 		e.self:Say("Sir Hobble is searching for [three special dragons]. For all I know they are not even dragons. He can't see or hear very well. He still thinks I am the only troll squire around.");
-	elseif(e.message:findi("three special dragons")) then
+	elseif(e.message:findi("three special dragon")) then
 		e.self:Say("Apparently he is after three dragons which are supposedly named Azdalin, Gylton, and Xyfl. He will not rest until he holds their scales. I wish you could [find the dragons].");
-	elseif(e.message:findi("find the dragons")) then
+	elseif(e.message:findi("find the dragon")) then
 		e.self:Say("If you bring me the three scales I will be able to place them upon the next three victims of Sir Hobble. Then we can part from this accursed isle. He would never know the difference. Do this and I will give you a warrior weapon out of the old knight's armory.");
 	end
 end

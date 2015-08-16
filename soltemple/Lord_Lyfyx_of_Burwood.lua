@@ -9,6 +9,8 @@ function event_say(e)
 		e.self:Say("Tektite and peridot shall get you what you desire.");
 	elseif(e.message:findi("xyfyl")) then
 		e.self:Say("So you can pronounce my name backwards..  Is that your lot in life?  Pronouncing names backwards?  Be gone with your silliness!  We need no court fool.");
+	elseif(e.message:findi("burning prince") or e.message:findi("temple of ro")) then
+		e.self:Emote("closes his eyes and shakes his head in sorrow. 'Far away and better forgotten.' ");
 	end
 end
 

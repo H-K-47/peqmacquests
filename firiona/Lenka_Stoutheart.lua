@@ -9,9 +9,16 @@ function event_say(e)
 		e.self:DoAnim(57);
 	elseif(e.message:findi("cabby pale ale")) then
 		eq.signal(84129,3);
-		eq.unique_spawn(84005,22,0,-3148,-1305,256,0);
+		eq.set_timer("hobble",math.random(900000,1800000));
 	elseif(e.message:findi("lizardtown")) then
 		e.self:Say("The trackers of Firiona Vie have come back with reports that the Iksar are back in force and have a city somewhere in the heart of Kunark. There goes the neighborhood...again.");
+	end
+end
+
+function event_timer(e)
+	if(e.timer == "hobble") then
+		eq.unique_spawn(84005,22,0,-3148,-1305,256,0);
+		eq.stop_timer("hobble");
 	end
 end
 
