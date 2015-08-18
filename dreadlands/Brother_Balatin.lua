@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,12970);	-- Robe of the Whistling Fist
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 12429})) then
 		e.self:Emote("quickly stashes the flute inside of his ribcage, where it joins another. 'If you want the true Flute of Zan-Fi, you'll have to take it from me!'"); --Made this up, no text available
-		eq.spawn2(86155,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.spawn2(86004,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
