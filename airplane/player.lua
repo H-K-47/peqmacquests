@@ -7,7 +7,3 @@ function event_zone(e)
 		end
 	end
 end
-
-function event_enter_zone(e)
-	e.self:BuffFadeAll(true);
-end
