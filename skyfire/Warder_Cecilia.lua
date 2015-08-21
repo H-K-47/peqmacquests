@@ -7,28 +7,12 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local entid;
-	local zordak_mob;
-	local mobnpc;
-	local dead_cleric_mob;
+	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 24996})) then -- 24996 :  An Assembled Pearlescent Shard
-		e.other:SummonItem(24997); -- 24997  Pearlescent Seal
-		entid = eq.unique_spawn(91096,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ()); -- Zordak_Ragefire, human form, he attacks the cleric
-		if(entid) then
-			zordak_mob = eq.get_entity_list():GetMobID(entid);
-			if(zordak_mob) then
-				mobnpc = e.self:GetZ()ordak_mob:CastToNPC();
-				if(mobnpc) then
-					dead_cleric_mob = eq.get_entity_list():GetMob(" .. e.other:GetName() .. ");
-					if(dead_cleric_mob) then
-						mobnpc:AddToHateList(dead_cleric_mob, 1);
-					end
-				end
-			end
-		end
+		e.other:QuestReward(e.self,0,0,0,0,24997); -- 24997  Pearlescent Seal
+		eq.unique_spawn(91005,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ()):AddToHateList(e.other,1); -- Zordak_Ragefire, human form, he attacks the cleric
 		eq.depop_with_timer();
-	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20859})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20859})) then
 		e.other:SummonItem(20859); -- 20859  Swirling Pearl
 		e.other:SummonItem(17175); -- 17175  Zordak's Box of Bindings
 	end

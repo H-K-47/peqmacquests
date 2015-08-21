@@ -1,6 +1,6 @@
 -- EPIC CLERIC -skyfire-
 function event_death_complete(e)
-	eq.spawn2(91090,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- Zordakalicus_Ragefire
+	eq.spawn2(91006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- Zordakalicus_Ragefire
 end
 
 function event_trade(e)
