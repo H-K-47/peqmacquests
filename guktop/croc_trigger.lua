@@ -43,7 +43,7 @@ end
 function event_signal(e)
 	CrocUp = CrocUp - 1;
 	if(CrocUp == 0) then
-		eq.set_timer("spawn timer",795000);
+		eq.set_timer("spawn timer",975000);
 	end
 end
 
