@@ -23,17 +23,13 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13129})) then
 		local random_silver = math.random(8);
 		e.self:Say("Ha! This is great. Here's your money, murderer! Hope the guards don't find you. Now get lost! Take the tunic. Maybe Garuc will reward you for such a vile deed. I sure don't want to keep it around here.");
-		e.other:SummonItem(13134);
-		e.other:Ding();
-		e.other:Faction(135,-5,0);
-		e.other:Faction(9,-5,0);
-		e.other:Faction(53,5,0);
-		e.other:Faction(33,5,0);
-		e.other:Faction(217,-5,0);
-		e.other:AddEXP(400);
-		e.other:GiveCash(0,random_silver,0,0);
+		e.other:Faction(53,20,0);
+		e.other:Faction(135,-3,0);
+		e.other:Faction(164,3,0);
+		e.other:Faction(33,2,0);
+		e.other:Faction(21,3,0);
+		e.other:QuestReward(e.self,0,random_silver,0,0,13134,400);
 	end
-	
 	item_lib.return_items(e.self, e.other, e.trade)
 	
 end

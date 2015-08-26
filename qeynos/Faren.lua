@@ -32,15 +32,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13702})) then
 		local randomcopper = math.random(20);
 		e.self:Say("Thank you so much!  If you want some free advice, steer clear of those [Irontoes]! They are nothing but trouble. Here, It's not much but I must thank you somehow.");
-		e.other:Ding();
-		e.other:SummonItem(13129); -- Hurrieta's Tunic
-		e.other:Faction(135,4,0); -- Guards of Qeynos
-		e.other:Faction(9,4,0); -- Antonius Bayle
-		e.other:Faction(53,-5,0); -- Corrupt Qeynos Guards
-		e.other:Faction(33,-5,0); -- Circle Of Unseen Hands
-		e.other:Faction(21,4,0); -- Merchants of Qeynos
-		e.other:AddEXP(200);
-		e.other:GiveCash(randomcopper,0,0,0);
+		e.other:Faction(135,10); -- Guards of Qeynos
+		e.other:Faction(9,1); -- Antonius Bayle
+		e.other:Faction(53,-1); -- Corrupt Qeynos Guards
+		e.other:Faction(33,-2); -- Circle Of Unseen Hands
+		e.other:Faction(217,1); -- Merchants of Qeynos
+		e.other:QuestReward(e.self,randomcopper,0,0,0,13129,200); -- Hurrieta's Tunic
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
