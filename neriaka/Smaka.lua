@@ -12,9 +12,9 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {platinum = 1000})) then
 		e.self:Say("Okay, enjoy me drink!");
-		e.other:Faction(69,5); --Dark Bargainers
-		e.other:Faction(88,5); --Dreadguard Outer
-		e.other:Faction(87,5); --Dreadguard Inner
+		e.other:Faction(69,3); --Dark Bargainers
+		e.other:Faction(88,1); --Dreadguard Outer
+		e.other:Faction(87,1); --Dreadguard Inner
 		e.other:SummonItem(14365); --Cough Elixir
 		e.other:Ding();
 	end
