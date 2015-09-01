@@ -15,7 +15,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 29007})) then --cold plate of beef and bread
 		e.self:Say("Har, har! No time fer eatin' now! While you were gone I struck me a rich vein. Lookie here! Ya ever seen a gem so pure? It's tiny but clear as glass. Ya take it, " .. e.other:GetName() .. ". Ya showed me some kindness, least I can do. Besides, still a share here for me.");
-		e.other:SummonItem(29006); --pure crystal
+		e.other:QuestReward(e.self,0,0,0,0,29006); --pure crystal
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
