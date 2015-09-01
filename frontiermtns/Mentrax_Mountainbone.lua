@@ -2,7 +2,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What be it you want! Go away before I eat you for dinner!");
 	elseif(e.message:findi("wenden sent me")) then
-		e.self:Say("Did he? Perhaps you would like to trade for some Rejesiam ore? Bring me the monocle from the patriarch that wanders around the Dreadlands. I've always wanted one of those."); -- made up dialogue - will replace with correct dialogue once found from live servers
+		e.self:Say("Oh, old Wenden? I guess you be wanting some ore. Well, you can't have none! Not unless you get me a new monocle. No. No. No. Don't even try to talk, you either bring me a new monocle that will fit or no ore for you");
 	end
 end
 
