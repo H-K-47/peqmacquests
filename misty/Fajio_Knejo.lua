@@ -8,7 +8,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20532})) then
 		e.self:Say("Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.");
-		e.other:SummonItem(20533);
+		e.other:QuestReward(e.self,0,0,0,0,20533,1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

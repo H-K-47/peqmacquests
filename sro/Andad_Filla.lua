@@ -17,8 +17,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20533})) then
 		e.self:Say("You still have a ways to go! Seek out Misty Tekcihta near the arena at Lake Rathe. Run like the wind!");
-		e.other:Ding();
-		e.other:SummonItem(20534);
+		e.other:QuestReward(e.self,0,0,0,0,20534,1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
