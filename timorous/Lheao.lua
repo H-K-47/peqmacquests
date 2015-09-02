@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("jumps at your voice and begins laughing at his skittishness. 'Ahh, hello there. Not many people know of this place, so visitors are quite rare. Hehehe. Its a very beautiful place indeed, so.. ummm, dont go telling everyone you know about it. Heheh. Thanks, Friend.'");
-	elseif(e.message:findi("book of immortals")) then
+	elseif(e.message:findi("immortals")) then
 		-- Monk Epic 1.0
 		e.self:Emote("looks up at you, eyes wide in astonishment. 'My god, you found Immortals?! Where did you find it? Nevermind, that is unimportant. I have in my possession a book that explains more of these individuals. Its value is unimaginable as well as the impact it is capable of. As you can see, I grow old. I need an individual to watch over this book and make sure it is protected. Would you be willing to take this [responsibility]?'");
 	elseif(e.message:findi("responsibility")) then

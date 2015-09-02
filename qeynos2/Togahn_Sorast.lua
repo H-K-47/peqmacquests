@@ -9,10 +9,6 @@ function event_say(e)
 	
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings.. I am Second Master Togahn Sorast. I am here to teach the ways of our guild. For our more advanced members, I will give out [headbands] as a reward for their contribution to the clan.");
-	elseif(e.message:findi("headbands")) then
-		e.self:Say("The Silent Fist Clan gives out colored Headbands for various deeds completed by our students. Phin gives out the White, Yellow, and Orange Headbands.. and I give out the [Red, Purple, and Blue Headbands].");
-	elseif(e.message:findi("Lu'Sun")) then
-		e.self:Say("Ahhh, Lu'Sun is a master of many skills. He has traveled all of Norrath, studying various techniques and disciplines. Now, he runs this small guild and passes on his knowledge to those willing to devote their lives to our cause.");
 	-- Requires Kindly Faction for Headband Quests
 	elseif(fac <= 3) then
 		if(e.message:findi("red headband")) then
@@ -38,6 +34,10 @@ function event_say(e)
 		elseif(e.message:findi("black headband")) then
 			e.self:Say("The black headband is one of the highest honors of our guild.. [Lu'Sun] only gives those out for great acts of heroism and devotion to the clan.");
 		end
+	elseif(e.message:findi("headbands")) then
+		e.self:Say("The Silent Fist Clan gives out colored Headbands for various deeds completed by our students. Phin gives out the White, Yellow, and Orange Headbands.. and I give out the [Red, Purple, and Blue Headbands].");
+	elseif(e.message:findi("Lu'Sun")) then
+		e.self:Say("Ahhh, Lu'Sun is a master of many skills. He has traveled all of Norrath, studying various techniques and disciplines. Now, he runs this small guild and passes on his knowledge to those willing to devote their lives to our cause.");
 	else
 		e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Silent Fist. But, I feel that such a vital matter should be left to one of our more trusted members.");
 	end
