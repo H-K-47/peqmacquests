@@ -14,7 +14,7 @@ function event_say(e)
 		e.other:SummonItem(14790);
 	elseif(e.message:findi("pauldrons")) then
 		e.self:Say("Take this note to the master of the mystics in Cabilis, he will teach you a lesson in sacrifice."); -- Text is unknown at this time. copied partials from vambrace
-		e.other:SummonItem(14787);
+		e.other:SummonItem(14795);
 	end
 end
 

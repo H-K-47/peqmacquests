@@ -27,6 +27,9 @@ function event_trade(e)
 		e.other:Faction(193,1);
 		e.other:QuestReward(e.self,0,0,0,0,7881,20000);
 	end
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14795})) then
+		e.self:Emote("takes the note without even a glance in your direction and begins reading. After a long silence, he lets his arms drop to his sides and says quietly, 'We kill, " .. e.other:GetName() .. ". That is our job, our duty in life. Our targets are chosen for us. We merely listen. Right now I am being told there is a traitor right here in our city. You must make this potion made of Spine Poison Extract and Willow Moss.  You must give this to one of our slave and bring me the goo from it along with two Fire Emeralds. As you do this, try hard to listen to our Lord's instruction. If you hear even a whisper, you will know more righteousness than most of this city.'"); -- text made up
+	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14790})) then
 		e.self:Emote("stares down at the note, confused, until he recognizes the writing and gasps in shock! 'You spoke to the Brothers? You, a simple Legionnaire? Well, no matter, you are here to test your virtue of sacrifice and we will take pleasure in it as we have for generations even before the Fallen Brothers. One of our greatest allies in pain is disease. In the woods outside our fair city is a small tribe of goblins. There is a certain goblin famed for his [unique weapon]. Take this knife and use it to cut this from the goblin. Then return his weapon, the knife, a sapphire, and an opal to me.'");
 		e.other:QuestReward(e.self,0,0,0,0,14784);
