@@ -10,15 +10,15 @@ function event_say(e)
 		e.self:Say("I, too, am a bard, or was rather. I have been cursed by that blasted pile of bones who calls itself, Trakanon.");
 	elseif(e.message:findi("trakanon")) then
 		e.self:Say("He is the undead dragon who rules this realm. I came on a quest seeking strings for my new instrument.");
-	elseif(e.message:findi("new instrument")) then
+	elseif(e.message:findi("instrument")) then
 		e.self:Say("I sought to create a Magical Lute.");
 	elseif(e.message:findi("magical lute")) then
 		e.self:Say("One that would make me the greatest bard in all the lands! Are you on a similar quest?");
-	elseif(e.message:findi("i am on a similar quest")) then
+	elseif(e.message:findi("similar quest")) then
 		e.self:Say("Excellent. I have stayed here far too long and I wish to go to my eternal slumber. But before I do so, I ask for one last request.");
 	elseif(e.message:findi("last request")) then
 		e.self:Say("Well then, I would ask you a favor for one in return. If I bring that cursed dragon here, will you kill it for me?");
-	elseif(e.message:findi("i will kill it for you")) then
+	elseif(e.message:findi("kill it for you")) then
 		e.self:Say("Give me the Mystical Lute Body you have. I will return it, don't worry. I only wish to hold an instrument one last time before I leave.");
 	end
 end
