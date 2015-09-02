@@ -12,6 +12,9 @@ function event_say(e)
 	elseif(e.message:findi("vambraces")) then
 		e.self:Say("Our arms carry more than the weapons of war and the hands that make use of them. We sacrifice the strength in our arms to carry our duties and obligations. Unless we can sacrifice our own bodies and abilities to carry these ideals, we will never be fit to protect the Chosen. Take this note to the master of the mystics in Cabilis, he will teach you a lesson in sacrifice.");
 		e.other:SummonItem(14790);
+	elseif(e.message:findi("pauldrons")) then
+		e.self:Say("Take this note to the master of the mystics in Cabilis, he will teach you a lesson in sacrifice."); -- Text is unknown at this time. copied partials from vambrace
+		e.other:SummonItem(14787);
 	end
 end
 
@@ -28,6 +31,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14783, item2 = 3056})) then
 		e.self:Say("Well done");
 		e.other:QuestReward(e.self,0,0,0,0,4977,1000);
+	end
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14787, item2 = 3057})) then
+		e.self:Say("Well done");
+		e.other:QuestReward(e.self,0,0,0,0,4978,1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
