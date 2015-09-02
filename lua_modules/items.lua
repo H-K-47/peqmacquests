@@ -3,19 +3,11 @@ local items = {}
 function items.check_turn_in(npc, trade, trade_check, keepitems)
 	keepitems = keepitems or true;	
 	
-	--create trade_return table == trade
-	--shallow copy
 	local trade_return = {};
 	for key, value in pairs(trade) do
 		trade_return[key] = value;
 	end
-
-	--for every item in trade_check check trade_return
-		--if item exists in trade_return then
-			--remove that item from trade_return
-		--else
-			--failure
-			
+	
 	if(keepitems) then
 		-- Add all the items handed to us that the NPC needs to the its loottable
 		local founditem = false;
@@ -33,7 +25,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 			end
 		end
 		-- The npc was handed an item it doesn't need.
-		if(not founditem) then
+		if(not founditem and trade_check["copper"] == nil and trade_check["silver"] == nil and trade_check["gold"] == nil and trade_check["platinum"] == nil) then
 			return false;
 		end
 	end
