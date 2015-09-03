@@ -6,13 +6,16 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if((item_lib.check_turn_in(e.self, e.trade, {item1 = 1687})) and (e.other:GetLevel() > 45) and (" .. e.other:Class() .. "=="Monk")) then
-		-- Monk Epic 1.0
-		eq.depop();
-		-- Spawn: Vorash
-		eq.spawn2(85211,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		-- Spawn: Deep
-		eq.spawn2(85223,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	if(e.other:GetLevel() > 45 and e.other:Class() =="Monk") then
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1687})) then
+			-- Monk Epic 1.0
+			eq.depop_with_timer();
+			-- Spawn: Vorash
+			eq.spawn2(85211,0,0,e.self:GetX()+5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+			-- Spawn: Deep
+			eq.spawn2(85223,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
+		end
+		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
