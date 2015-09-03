@@ -55,11 +55,11 @@ function event_trade(e)
 		e.self:Say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 		e.other:Ding();
 		e.other:SummonItem(18839);
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(9,5,0); -- Antonius Bayle
-		e.other:Faction(53,-10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(33,-10,0); -- Circle of Unseen Hands
-		e.other:Faction(217,5,0); -- Merchants of Qeynos
+		e.other:Faction(135,20,0); -- Guards of Qeynos
+		e.other:Faction(9,3,0); -- Antonius Bayle
+		e.other:Faction(53,-3,0); -- Corrupt Qeynos Guards
+		e.other:Faction(33,-5,0); -- Circle of Unseen Hands
+		e.other:Faction(217,2,0); -- Merchants of Qeynos
 		e.other:AddEXP(1500);
 		e.other:GiveCash(8,11,2,0);
 	end

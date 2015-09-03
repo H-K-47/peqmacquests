@@ -24,11 +24,11 @@ function event_trade(e)
 		e.self:Say("Yeah, well, these are pretty hard to come by. In fact, these came all the way from Odus. Enjoy, and tell your buddies.");
 		e.other:Ding();
 		e.other:SummonItem(18006);
-		e.other:Faction(33,2,0);
-		e.other:Faction(217,-2,0);
-		e.other:Faction(53,2,0);
-		e.other:Faction(135,-2,0);
-		e.other:Faction(164,2,0);
+		e.other:Faction(33,1,0);
+		e.other:Faction(217,-1,0);
+		e.other:Faction(53,1,0);
+		e.other:Faction(135,-1,0);
+		e.other:Faction(164,1,0);
 		e.other:AddEXP(200);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13784})) then
 		e.self:Say("All right, I'll make sure this gets put on the next boat to Erudin. But now, I need a favor of you. Since I'm stuck here working the docks all day, I need someone to run out to Qeynos Hills and bring me back various pelts and skins. I got a customer in Odus who is trying to get a new shop started, and he needs some samples. Bring me back some snake scales, a high quality bear skin, a high quality wolf skin, and some bat fur. Make sure the quality is good, I can't send him rags.");

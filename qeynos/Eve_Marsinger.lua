@@ -19,11 +19,11 @@ function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18165})) then
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
-		e.other:Faction(192,10,0);
-		e.other:Faction(184,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(273,-30,0);
-		e.other:Faction(207,-30,0);
+		e.other:Faction(192,5,0);
+		e.other:Faction(184,1,0);
+		e.other:Faction(135,1,0);
+		e.other:Faction(273,-1,0);
+		e.other:Faction(207,-1,0);
 		e.other:AddEXP(150);
 		e.other:GiveCash(0,0,math.random(9),0);
 		e.other:Ding();

@@ -22,11 +22,11 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18152}) or item_lib.check_turn_in(e.self, e.trade, {item1 = 18156})) then
 		e.self:Say("More mail - you have done us a noteworthy service!  Please take this gold for your troubles.  If you are interested in more work, just ask me.");
 		e.other:Ding();
-		e.other:Faction(192,5,0);
-		e.other:Faction(184,5,0);
-		e.other:Faction(135,5,0);
-		e.other:Faction(273,-15,0);
-		e.other:Faction(207,-15,0);
+		e.other:Faction(192,10);
+		e.other:Faction(184,1);
+		e.other:Faction(135,1);
+		e.other:Faction(273,-1);
+		e.other:Faction(207,-1);
 		e.other:AddEXP(200);
 		e.other:GiveCash(0,0,eq.ChooseRandom(8,9,10,11,12),0);
 	end

@@ -33,28 +33,20 @@ function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13064,item2 = 13064, gold = 3})) then
 		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
-		e.other:SummonItem(1050); -- rat fur cap
-		e.other:Ding();
-		e.other:Faction(434,2,0); -- Qeynos Citizen
-		e.other:AddEXP(200);
+		e.other:Faction(434,2); -- Qeynos Citizen
+		e.other:QuestReward(e.self,0,0,0,0,1050,200);  -- rat fur cap
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13054,item2 = 13054,item3 = 13054,gold = 4})) then
-		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
-		e.other:SummonItem(1051); -- rat pelt cloak
-		e.other:Ding();
-		e.other:Faction(434,2,0); -- Qeynos Citizen
-		e.other:AddEXP(200);
+		e.self:Say("This cape turned out great. It'll sure help keep you warm on those cold and stormy nights out in the Karanas.");
+		e.other:Faction(434,5); -- Qeynos Citizen
+		e.other:QuestReward(e.self,0,0,0,0,1051,200); -- rat pelt cloak
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13067,item2 = 13067,item3 = 13067,gold = 2})) then
-		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
-		e.other:SummonItem(1052); -- Snake fang necklace
-		e.other:Ding();
-		e.other:Faction(434,2,0); -- Qeynos Citizen
-		e.other:AddEXP(200);
+		e.self:Say("Hey, hey.. with this little baby, you will be the talk of the town tonight!");
+		e.other:Faction(434,5); -- Qeynos Citizen
+		e.other:QuestReward(e.self,0,0,0,0,1052,200); -- Snake fang necklace
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13065,item2 = 13071,item3 = 13033})) then
-		e.self:Say("Hey. look at this. some of my best work, if I do say so myself. Enjoy, and tell your friends");
-		e.other:SummonItem(1053); -- rat's foot necklace
-		e.other:Ding();
-		e.other:Faction(434,2,0); -- Qeynos Citizen
-		e.other:AddEXP(200);
+		e.self:Say("Now this here has got to be one of my best works.. I dare you to find someone who can make a higher quality necklace than this one! Enjoy, my good friend!");
+		e.other:Faction(434,5); -- Qeynos Citizen
+		e.other:QuestReward(e.self,0,0,0,0,1053,200); -- rat's foot necklace
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -12,15 +12,12 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 17600})) then
 		e.self:Say("What are you? The Rat's new bag man? Peh, he is useless. That bum drinks any gold he gets. Here ya go, kid!");
-		e.other:Ding();
-		e.other:SummonItem(13901);
-		e.other:Faction(33,10,0); -- +Circle of Unseen Hands
-		e.other:Faction(217,-10,0); -- -Merchants of Qeynos
-		e.other:Faction(53,10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(135,-10,0); -- -Guards of Qeynos
-		e.other:Faction(164,10,0); -- Kane Bayle
-		e.other:AddEXP(250);
-		e.other:GiveCash(0,0,6,0);
+		e.other:Faction(33,2,0); -- +Circle of Unseen Hands
+		e.other:Faction(217,-1,0); -- -Merchants of Qeynos
+		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(135,-1,0); -- -Guards of Qeynos
+		e.other:Faction(164,1,0); -- Kane Bayle
+		e.other:QuestReward(e.self,0,0,6,0,13901,250);
 	end
 	
 	item_lib.return_items(e.self, e.other, e.trade)

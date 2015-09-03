@@ -28,11 +28,11 @@ function event_trade(e)
 		repeat
 			e.self:Say("Oh, thank you so much. I do get hungry on patrol. Here, please take this reward for your kindness.");
 			e.other:Ding();
-			e.other:Faction(135,5,0);
-			e.other:Faction(9,5,0);
-			e.other:Faction(217,5,0);
-			e.other:Faction(53,-5,0);
-			e.other:Faction(33,-10,0);
+			e.other:Faction(135,1);
+			e.other:Faction(9,1);
+			e.other:Faction(217,1);
+			e.other:Faction(53,-1);
+			e.other:Faction(33,-1);
 			e.other:AddEXP(10);
 			muffin = muffin - 1;
 		until muffin == 0

@@ -8,12 +8,12 @@ function event_trade(e)
   local item_lib =require("items");
   if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18821})) then
     e.self:QuestSay(e.other, "Hey. Thanks! Sorry about that 'he's my brother' bit but I am sure you had a good time at the Lion's Mane anyway. I sure didn't lie to you about the quality of the ale there.");
-    e.other:Faction(135,10,0);
-    e.other:Faction(9,10,0);
-    e.other:Faction(33,-20,0);
-    e.other:Faction(53,-20,0);
-    e.other:Faction(217,10,0);
-    e.other:AddEXP(8000);
+    e.other:Faction(135,5,0);
+    e.other:Faction(9,1,0);
+    e.other:Faction(33,-1,0);
+    e.other:Faction(53,-1,0);
+    e.other:Faction(217,1,0);
+    e.other:AddEXP(800);
 	e.other:GiveCash(8,0,0,0);
   end
   item_lib.return_items(e.self, e.other, e.trade, e.text)

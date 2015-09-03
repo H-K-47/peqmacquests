@@ -17,22 +17,22 @@ function event_trade(e)
 		e.self:Say("The map!! It is all blurred. The ink has run. I shall never be able to decipher it now. Still, I owe you for completion of your mission. May these be of assistance. It is always good for a warrior to be well supplied.");
 		e.other:SummonItem(5082);
 		e.other:Ding();
-		e.other:Faction(135,1,0);
-		e.other:Faction(184,1,0);
-		e.other:Faction(311,1,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(105,-5,0);
+		e.other:Faction(311,20,0);
+		e.other:Faction(135,4,0);
+		e.other:Faction(53,-3,0);
+		e.other:Faction(105,-3,0);
+		e.other:Faction(184,4,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,3,0,0);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13424, item2 =13424, item3 = 13424,item4 = 13424})) then
 		e.self:Say("Incredible!! Such grand tones. It shall make a fine rug. You have shown me that you cannot always judge a book by its cover. You are quite skilled. Would you like to perform a [dangerous task] for me?");
 		e.other:SummonItem(eq.ChooseRandom(2140,2147));
 		e.other:Ding();
-		e.other:Faction(135,1,0);
-		e.other:Faction(184,1,0);
-		e.other:Faction(311,1,0);
-		e.other:Faction(53,-5,0);
-		e.other:Faction(105,-5,0);
+		e.other:Faction(311,20,0);
+		e.other:Faction(135,4,0);
+		e.other:Faction(53,-3,0);
+		e.other:Faction(105,-3,0);
+		e.other:Faction(184,4,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,4,0,0);
 	end

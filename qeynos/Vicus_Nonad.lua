@@ -31,9 +31,9 @@ function event_trade(e)
 		eq.delete_global("tax_collection");
 		e.other:Ding();
 		e.other:Faction(9,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(273,-15,0);
-		e.other:Faction(164,-15,0);
+		e.other:Faction(135,4,0);
+		e.other:Faction(273,-5,0);
+		e.other:Faction(164,-10,0);
 		e.other:Faction(217,10,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,1,2,0);
