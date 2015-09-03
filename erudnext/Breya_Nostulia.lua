@@ -15,12 +15,10 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 17056,item2 = 1766})) then
 		e.self:Say("Well done, " .. e.other:GetName() .. ". I had a feeling you would return victorious. Here is your reward, the Leggings of Midnight Sea. Wear them with pride for the Ocean Lord. If you are interested in aiding us further, you may want to ask Gans about his brother.");
-		e.other:SummonItem(1762);
-		e.other:Ding();
-		e.other:Faction(79,2,0);
-		e.other:Faction(145,2,0);
-		e.other:Faction(143,-2,0);
-		e.other:AddEXP(1000);
+		e.other:Faction(79,25,0);
+		e.other:Faction(145,3,0);
+		e.other:Faction(143,-3,0);
+		e.other:QuestReward(e.self,0,0,0,0,1762,1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

@@ -21,10 +21,11 @@ function event_trade(e)
 		e.other:Faction(143,-15,0); -- Heretics
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 1771})) then
-		e.self:Say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way.");
-		e.other:SummonItem(1763);
-		e.other:Ding();
-		e.other:AddEXP(300);
+		e.self:Say("Ahhh, thank you for your effort, " .. e.other:GetName() .. ". I'm glad he's doing ok despite the theft. I now award you the Sleeves of Midnight Sea. May they protect you until the time of our glorious redemption.");
+		e.other:Faction(79,25,0); -- Deepwater Knights
+		e.other:Faction(145,3,0); -- High Council of Erudin
+		e.other:Faction(143,-3,0); -- Heretics
+		e.other:QuestReward(e.self,0,0,0,0,1763,300);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

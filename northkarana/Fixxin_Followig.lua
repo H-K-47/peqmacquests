@@ -19,13 +19,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 16500})) then
 		e.self:Say(string.format("thanks %s heartily. 'Here is the book as promised. I wish you luck with your enchanted weapons. May they slay many lycanthropes before they go dull.'",e.other:GetName()));
-		e.other:SummonItem(18178);
-		e.other:Ding();
-		e.other:Faction(167,10,0); -- karana residents
-		e.other:Faction(135,10,0); -- guards of qeynos
-		e.other:Faction(257,10,0); -- priests of life
-		e.other:Faction(183,10,0); -- knights of thunder
-		e.other:AddEXP(500);
+		e.other:Faction(167,1); -- karana residents
+		e.other:Faction(135,1); -- guards of qeynos
+		e.other:Faction(257,1); -- priests of life
+		e.other:Faction(183,1); -- knights of thunder
+		e.other:QuestReward(e.self,0,0,0,0,18178,500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
