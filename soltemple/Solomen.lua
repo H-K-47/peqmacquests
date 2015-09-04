@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Ah, I see you have found my study.  This is where I study and scribe the history of magic in Norrath.");
-	elseif(e.other:GetClass() == 12 and e.other:HasItem(14341) == false) then -- check for epic, if none then continue if the class is a wizard.
+	elseif(e.other:GetClass() == 12 and e.other:GetLevel() > 45) then -- check for if the class is a wizard and level 46+
 		if(e.message:findi("what history")) then
 			e.self:Say("I have worked to chronicle everything from the beginnings of magic to what we consider the modern day of magic.  Solusek Ro has been very generous to those who wield magic in Norrath.  But throughout history there is one thing I have noticed - too much power corrupts the soul.  I have seen and documented that the strongest wizards and those closest to Solusek Ro become corrupted by their power.");
 		elseif(e.message:findi("wizard")) then
@@ -15,12 +15,17 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14340})) then
-		e.self:Say("You actually did it! I never would have thought that anyone could have truly followed this path. This is a tribute to your intelligence and patience. Here, take this staff and know that you have made Solusek Ro and all the wizards of the world proud this day.");
-		e.other:Faction(342, -50,0); -- Truespirit
-		e.other:QuestReward(e.self,0,0,0,0,14341);
+	
+	if(e.other:GetLevel() > 45) then
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14340})) then
+			e.self:Say("You actually did it! I never would have thought that anyone could have truly followed this path. This is a tribute to your intelligence and patience. Here, take this staff and know that you have made Solusek Ro and all the wizards of the world proud this day.");
+			e.other:Faction(342, -50,0); -- Truespirit
+			e.other:QuestReward(e.self,0,0,0,0,14341);
+		end
+		item_lib.return_items(e.self, e.other, e.trade)
+	else
+		item_lib.return_items(e.self, e.other, e.trade)
 	end
-	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------
