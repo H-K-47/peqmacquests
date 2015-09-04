@@ -40,8 +40,10 @@ function event_trade(e)
 			e.other:QuestReward(e.self,0,0,0,0,20481);
 			eq.spawn2(54237,0,0,2852,3239,-155,109.5);
 		end
+		item_lib.return_items(e.self, e.other, e.trade);
+	else
+		item_lib.return_items(e.self, e.other, e.trade);
 	end
-	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 -------------------------------------------------------------------------------------------------
