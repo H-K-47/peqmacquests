@@ -21,13 +21,16 @@ function event_trade(e)
 		-- 5727 regal band of bathezid
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 6477, item2 = 6478, item3 = 5727})) then
 			e.self:Say("Amazing! You have returned the trophies I asked for, against impossible odds. Here is your reward, worthy minion, may it serve you well.");
-			e.other:Faction(281,50);
-			e.other:Faction(384,-30);
+			e.other:Faction(23,3);
+			e.other:Faction(281,3)
+			e.other:Faction(121,-1);
 			e.other:SummonItem(5727); -- 5727 We get Regal Band of Bathezid back
 			e.other:QuestReward(e.self,0,0,0,0,5723,100000); -- 5723  Spirit Wracked Cord, final reward
 		end
+		item_lib.return_items(e.self, e.other, e.trade)
+	else
+		item_lib.return_items(e.self, e.other, e.trade)
 	end
-	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------
