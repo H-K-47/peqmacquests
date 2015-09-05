@@ -26,6 +26,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 		end
 		-- The npc was handed an item it doesn't need.
 		if(not founditem and trade_check["copper"] == nil and trade_check["silver"] == nil and trade_check["gold"] == nil and trade_check["platinum"] == nil) then
+			npc:DeleteQuestLoot();
 			return false;
 		end
 	end
@@ -134,7 +135,8 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 		trade.item2 = 0;
 		trade.item3 = 0;
 		trade.item4 = 0;
-		npc:DeleteQuestLoot(item1, item2, item3, item4);
+		-- npc:DeleteQuestLoot(item1, item2, item3, item4);
+		npc:DeleteQuestLoot();
 	end
 
 	trade.platinum = math.floor(return_money / 1000);
