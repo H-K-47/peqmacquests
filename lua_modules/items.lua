@@ -150,6 +150,19 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 	return true;
 end
 
+function items.clear_inventory(npc, trade)
+	for i = 1, 4 do
+		local inst = trade["item" .. i];
+		if(inst.valid) then
+			-- If the npc does not have this item in their quest loot, then clear the inventory.
+			if(not npc:GetQuestLoot(inst:GetID())) then
+				npc:DeleteQuestLoot();
+				break;
+			end
+		end
+	end
+end
+
 function items.return_items(npc, client, trade, text)
 	text = text or true;
 	local returned = false;
@@ -158,10 +171,11 @@ function items.return_items(npc, client, trade, text)
 		if(inst.valid) then
 			-- If the npc does not have this item in their quest loot, then it needs to be returned.
 			if(not npc:GetQuestLoot(inst:GetID())) then
+				npc:DeleteQuestLoot();
 				local itemid = inst:GetID();
 				local charges = inst:GetCharges();
 				client:SummonItem(itemid,charges);
-				if(text == true) then
+				if(text == true and npc:CanTalk()) then
 					npc:Say(string.format("I have no need for this item %s, you can have it back.", client:GetCleanName()));
 				end
 				returned = true;
