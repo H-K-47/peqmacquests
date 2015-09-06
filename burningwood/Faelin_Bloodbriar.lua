@@ -1,3 +1,12 @@
+function event_spawn(e)
+	eq.set_timer("depop",1800000);
+end
+
+function event_timer(e)
+	eq.stop_timer("depop")
+	eq.depop();
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Didn't think I was gone for good, did you? We're that much closer to finishing this trial of our strength, thanks to you.");

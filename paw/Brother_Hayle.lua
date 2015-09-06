@@ -35,7 +35,7 @@ function event_trade(e)
 			e.other:QuestReward(e.self,0,0,0,0,5504,0);	--  soulfire
 		else
 			-- faction not hight enough, items get eaten.
-			-- e.self:Say("Faction not high enough, I'm going to eat these"); -- to test this.
+			item_lib.clear_inventory(e.self, e.trade)
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
