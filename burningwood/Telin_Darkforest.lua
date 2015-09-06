@@ -3,7 +3,7 @@ function event_say(e)
 	if(e.other:GetFaction(e.self) < 4) then
 		if(e.message:findi("hail")) then
 			e.self:Emote("looks at you serenely. 'Hello, wanderer.'");
-		elseif(e.message:findi("what are you doing")) then
+		elseif(e.message:findi("what are you doing") or e.message:findi("demon")) then
 			e.self:Say("Mighty this place must have been, once. Now scarred by hatred and suffering. I have been sent here seeking answers to problems not yet understood.");
 		elseif(e.message:findi("answers")) then
 			e.self:Emote("considers you for a few moments before speaking. 'A great evil walks across the land. The hand of some demon we don't yet know is twisting and polluting forests.'");
