@@ -1,6 +1,7 @@
 function event_signal(e)
-	if(e.signal == 99) then
+	if(e.signal == 1) then
 		e.self:Emote("breathes quickly and sweats as he channels his spirit into the sky.");
+		e.self:CastSpell(791,e.self:GetID());
 	end
 end
 
