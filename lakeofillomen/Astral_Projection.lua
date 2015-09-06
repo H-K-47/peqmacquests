@@ -15,7 +15,6 @@ function event_trade(e)
 			-- Spawn: Deep
 			eq.spawn2(85223,0,0,e.self:GetX()-5,e.self:GetY(),e.self:GetZ(),e.self:GetHeading()):AddToHateList(e.other,1);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

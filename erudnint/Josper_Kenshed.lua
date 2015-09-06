@@ -35,7 +35,6 @@ function event_trade(e)
 			e.other:Faction(147,1,0); --faction with High Guards of Erudin increased
 			e.other:QuestReward(e.self,0,7,0,0,15380,1000);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

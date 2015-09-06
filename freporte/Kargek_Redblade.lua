@@ -24,10 +24,8 @@ function event_trade(e)
 			e.self:Say("Thank you for delivering the note to my associate. Take this book - it will tell you a little of the history of the old scabbard. If you would like to own the scabbard, seek out my younger brother Tenal and give him the book.");
 			e.other:QuestReward(e.self,0,0,0,0,18083,1000); -- Redblade's Legacy
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -- END of FILE Zone:freporte -- Kargek_Redblade

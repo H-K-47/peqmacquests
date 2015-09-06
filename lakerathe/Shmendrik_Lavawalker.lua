@@ -15,10 +15,8 @@ function event_trade(e)
 			e.other:QuestReward(e.self,0,0,0,0,28045); -- Oil of Fennin Ro
 			eq.unique_spawn(51138,32,0,160,3630.3,51,192.4);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_signal(e)

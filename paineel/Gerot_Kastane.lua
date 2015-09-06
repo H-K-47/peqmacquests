@@ -21,8 +21,6 @@ function event_trade(e)
 			e.self:Say("Good travels, dark one! May Innoruuk curse your enemies!");
 			e.other:Faction(342, 3);
 			e.other:SummonItem(14369);
-		else
-			item_lib.return_items(e.self, e.other, e.trade)
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

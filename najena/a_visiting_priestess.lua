@@ -26,12 +26,10 @@ function event_trade(e)
 			e.other:Faction(260, -40); -- Primordial Malice
 			e.other:QuestReward(e.self,0,0,0,0,18401,132775); --  Scroll of Flayed Goblin Skin --  2.5% @ level 30
 			eq.depop_with_timer();
-		else
-			item_lib.return_items(e.self, e.other, e.trade,false);
-			e.self:Emote("grins evilly as she disassembles the staff and holds forth a runed wooden rod.");
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade,false);
+	e.self:Emote("grins evilly as she disassembles the staff and holds forth a runed wooden rod.");
 end
 
 -- END of FILE Zone:najena ID:44107 -- a_visiting_priestess 

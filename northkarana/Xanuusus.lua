@@ -18,7 +18,6 @@ function event_trade(e)
 			e.self:Emote("pushes the spirits into the air, making them dance around the scimitar. With a wave of his hand they melt into the blade and hilt of the weapon. 'With this the spirits of the lands are now free from the corruption of the dark gods.  Through your strength and dedication was this possible, " .. e.other:GetName() .. ".  May the foul poison that once poured into the earth itself never do so again. Take this weapon that you may continue to watch over the balance of nature. Go now, with the gods' blessings.'");
 			e.other:QuestReward(e.self,0,0,0,0,20490,2500000); -- naturewalker's scimitar
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13411})) then
 		e.self:Say("Heh heh! Excellent, small one!  My roots have been longing for some fresh jumjum juice!  Thank you!  Take this for your trouble.  Be sure to thank the Tagglefoots for me.");

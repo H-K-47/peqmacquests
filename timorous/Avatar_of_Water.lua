@@ -11,10 +11,8 @@ function event_trade(e)
 			e.other:QuestReward(e.self,0,0,0,0,5532,200000); -- Water Sprinkler of Nem Ankh
 			eq.depop();
 		end
-		item_lib.return_items(e.self, e.other, e.trade) -- return unused items
-	else
-		item_lib.return_items(e.self, e.other, e.trade) -- return unused items
 	end
+	item_lib.return_items(e.self, e.other, e.trade) -- return unused items
 end
 
 function event_timer(e)

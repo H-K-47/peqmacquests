@@ -45,10 +45,8 @@ function event_trade(e)
 			e.self:Emote("grins wildly and his eyes flare a deep red. The scythe he promised you flies through the air and into your hand. 'Enjoy your toy, I have no more need of you as a servant.'");
 			e.other:QuestReward(e.self,0,0,0,0,20544,10000); --Scythe of the Shadowed Soul
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------

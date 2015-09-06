@@ -22,10 +22,8 @@ function event_trade(e)
 			e.other:Faction(342, -50,0); -- Truespirit
 			e.other:QuestReward(e.self,0,0,0,0,14341);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------

@@ -27,10 +27,8 @@ function event_trade(e)
 			e.other:SummonItem(5727); -- 5727 We get Regal Band of Bathezid back
 			e.other:QuestReward(e.self,0,0,0,0,5723,100000); -- 5723  Spirit Wracked Cord, final reward
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------

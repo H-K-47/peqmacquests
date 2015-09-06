@@ -33,8 +33,6 @@ function event_trade(e)
 			e.other:Faction(342,3);
 			e.other:QuestReward(e.self,0,0,0,0,14367);
 			eq.depop_with_timer();
-		else
-			item_lib.return_items(e.self, e.other, e.trade)
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

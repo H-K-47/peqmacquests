@@ -32,10 +32,8 @@ function event_trade(e)
 			e.self:Say("Where in the world did you drag that up?!' He peers closely at the severely damaged dragon head hilt. 'This metal is the same material that some mages use to make powerful golems and this other metal looks like rejesiam ore. If you can find some of those materials, I can fix this hilt up easily.");
 			e.other:QuestReward(e.self,0,0,0,0,20669);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -- END of FILE Zone:freporte  ID:10116 -- Wenden_Blackhammer

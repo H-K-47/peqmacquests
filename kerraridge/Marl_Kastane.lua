@@ -62,7 +62,6 @@ function event_trade(e)
 			e.other:Faction(342, 5);
 			e.other:SummonItem(14370);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

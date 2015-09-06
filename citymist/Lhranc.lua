@@ -23,7 +23,6 @@ function event_trade(e)
 			eq.spawn2(90015, 0, 0, 85.1, 0.9, 7.8, 192); ----Lhranc
 			eq.depop_with_timer();
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

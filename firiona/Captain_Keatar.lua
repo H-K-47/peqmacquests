@@ -33,7 +33,6 @@ function event_trade(e)
 			e.other:Faction(250,-1);
 			e.other:QuestReward(e.self,0,8,0,0,eq.ChooseRandom(12924,12925,12926,12927,12928,12929,12930,12931,12932,12933),5000);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

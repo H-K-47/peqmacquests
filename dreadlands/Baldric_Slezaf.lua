@@ -24,10 +24,8 @@ function event_trade(e)
 			e.self:Emote("looks shocked as you hand him the pages and the mystical lute. 'I will put on a symphony the likes of which the gods have never seen. Thank you so much, " .. e.other:GetName() .. ". Please take this sword as a token of my gratitude.");
 			e.other:QuestReward(e.self,0,0,0,0,20542,350000);
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -------------------------------------------------------------------------------------------------
