@@ -5,7 +5,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10626})) then
 		e.self:Say("Crroooaak! Crrroooooaaakk!");
-		e.other:QuestReward(e.self,0,0,0,0,10601,10000);
+		e.other:QuestReward(e.self,0,0,0,0,10601);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

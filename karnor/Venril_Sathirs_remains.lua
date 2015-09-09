@@ -1,4 +1,10 @@
 -- pulsing green stone - ranger/druid epic
+function event_spawn(e)
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(102010)) then -- if VS is up. VSR will depop.
+		eq.depop_with_timer();
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("The living fire. I seek the fires of life. Bring them.");

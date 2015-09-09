@@ -12,14 +12,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10628})) then
-		e.self:Emote("writes something down on a piece of parchment.");
-		e.self:Say("You go tell dat Brokk dat he owe me big for smushing garden. Make him read dis.");
-		e.other:SummonItem(10629);
+		e.self:Emote("writes something down on a piece of parchment. 'You go tell dat Brokk dat he owe me big for smushing garden. Make him read dis.'");
+		e.other:QuestReward(e.self,0,0,0,0,10629);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10630})) then
 		e.self:Say("'Oh, dat silly Brokk. He sent me too many of these perty flowers. Me not know where put them all. Here, you take some cause you help Bozlum. Me like you. Flowers make you smell perty, too.");
-		e.other:AddEXP(100);
-		e.other:SummonItem(10609);
-		e.other:Ding();
+		e.other:QuestReward(e.self,0,0,0,0,10609,100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

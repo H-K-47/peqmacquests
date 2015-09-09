@@ -1,8 +1,7 @@
--- Converted to .lua by Speedz
-
 function event_say(e)
 	if (e.message:findi("mechanical pen")) then
 		e.self:Say("Why do you want one of those contraptions. You will spend more time repairing it then you will writing with it. But if you insist on getting one, you are going to have to do a small favor.");
+	elseif(e.message:findi("small favor")) then
 		e.self:Emote("tugs at your robe and grins evilly. 'Mighty nice outfit you have there. Sure beats these drab robes us three are wearing. Hmm...my favorite color is purple, in fact a shiny metallic purple would do nicely. How bad did you want that pen?'");
 	end
 end
@@ -19,9 +18,7 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	elseif (item_lib.check_turn_in(e.self, e.trade, {item1 = 1360})) then
 		e.self:Say("Very nice!! It is perfect! Here take this pen. Have fun with it.");
-		e.other:Ding();
-		e.other:AddEXP(50000);
-		e.other:SummonItem(10600);
+		e.other:QuestReward(e.self,0,0,0,0,10600,50000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

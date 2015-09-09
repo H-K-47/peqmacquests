@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("Good day, I have discovered something truly wonderful! If I only had the materials required so I can copy my notes and send them to my teacher.");
 	elseif(e.message:findi("discover")) then
 		e.self:Say("I was researching a new spell, and discovered new information concerning the history of the Serpent.");
-	elseif(e.message:findi("materials")) then
+	elseif(e.message:findi("material")) then
 		e.self:Say("The materials I need are a mechanical pen, ink of the dark, and white paper. Bring me those and I will give you a copy of this information.");
 	elseif(e.message:findi("teacher")) then
 		e.self:Say("My teacher is Jeb Lumsed. He was last seen in the regions of the newly discovered lands of Kunark. If you wish to find him that is where you must seek him out.");
@@ -25,9 +25,8 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10600,item2 = 10601,item3 = 10602})) then
 		e.self:Say("Yes, that is what I wanted. Here, take these notes. My teacher will be very interested if he is shown what I have found.");
 		e.other:Ding();
-		e.other:Faction(342,10,0);
-		e.other:SummonItem(10603);
-		e.other:AddEXP(50000);
+		e.other:Faction(342,100);
+		e.other:QuestReward(e.self,0,0,0,0,10603,5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

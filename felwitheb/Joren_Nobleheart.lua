@@ -15,9 +15,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10627})) then
 		e.self:Say("Vengeance has been fufilled! However, the King still has a heavy heart. Not until Firiona has been returned can this sadness be lifted. But in appreciation of your efforts, I am honored to present to you the King's Chalice.");
-		e.other:Ding();
-		e.other:AddEXP(100000);
-		e.other:SummonItem(10608);
+		e.other:QuestReward(e.self,0,0,0,0,10608,10000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
