@@ -4,7 +4,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("hisses at you");
-	if(e.message:findi("jeb lumsed")) then
+	elseif(e.message:findi("jeb lumsed")) then
 		e.self:Say("Yes, I am. Use your most enlightened magic to seek the truth of what is around you. When that is done, you will know what you seek.");
 	elseif(e.message:findi("serpent")) then
 		e.self:Say("The first truly powerful enchanter, Krilan Pedin, crafted the Serpent years ago. He trained his students to carry on the trade in a five-step process. Each student then became a master and chose one of their own students to pass the legacy on to. Four others and I, myself, are current practitioners of the crafting.");
@@ -27,15 +27,9 @@ function event_trade(e)
 		e.self:Say("I see that you have what I was waiting for. Stofo does do excellent work. It seems that you are to start on a long journey. Take this seal and it will guide you on your next step. Seek out the masters of enchantment. In time we will craft the Serpent for you. When you have collected the four parts of the staff, you must combine them in a bundle and return them to me.");
 		e.self:Say("Take this seal. You will need to show my seal to the other masters so that they may grant you the tools to complete your next tasks. When you have collected the four parts of the staff, you must combine them in a bundle for me. The other masters can provide the means to bundle them. Good luck and safe travel.");
 		e.other:QuestReward(e.self,0,0,0,0,10604);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10639})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10639}) and e.other:GetFaction(e.self) < 5) then
 		e.self:Say("The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well.");
-		e.other:Faction(342,30);
-		e.other:QuestReward(e.self,0,0,0,0,10650,150000);
+		e.other:QuestReward(e.self,0,0,0,0,10650,15000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
-
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------
