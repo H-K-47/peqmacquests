@@ -18,11 +18,11 @@ function event_trade(e)
 		e.self:Say("Thank you so much for the favor. Please be careful here in Qeynos. I have come to suspect that even some of my fellow guards are not to be trusted - Lieutenant Dagarok, for one.");
 		local random_cp = math.random(8);
 		e.other:Ding();
-		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(9,10,0); -- Antonius Bayle
-		e.other:Faction(33,-20,0); -- Circle Of Unseen Hands
-		e.other:Faction(53,-20,0); -- Corrupt Qeynos Guards
-		e.other:Faction(217,10,0); -- Merchants of Qeynos
+		e.other:Faction(135,25,0); -- Guards of Qeynos
+		e.other:Faction(9,3,0); -- Antonius Bayle
+		e.other:Faction(33,-3,0); -- Circle Of Unseen Hands
+		e.other:Faction(53,-6,0); -- Corrupt Qeynos Guards
+		e.other:Faction(217,2,0); -- Merchants of Qeynos
 		e.other:AddEXP(8000);
 		e.other:GiveCash(random_cp,0,0,0);
 	end

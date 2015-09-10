@@ -16,7 +16,7 @@ function event_trade(e)
 		e.other:Message(15,"In his drunkedness, Palatos advises you to seek out Svinal Wyspin, a Gnome merchant in North Freeport.");
 		e.other:SummonItem(12145); -- Beacon Mount
 		e.other:Ding();
-		e.other:Faction(56,1,0); -- Craftkeepers
+		e.other:Faction(56,2,0); -- Craftkeepers
 		e.other:Faction(145,1,0); -- High Council of Erudin
 		e.other:Faction(147,1,0); -- High Guard of Erudin
 		e.other:Faction(143,-1,0); -- Heretics
@@ -25,7 +25,16 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13818})) then
 		e.self:Say("Thanks.. That saved me a lot of money. Now I can spend more time with the captain before I give this back to Lenka Stoutheart. Here is a little so...mething.");
 		e.other:Ding();
-		e.other:Faction(56,1,0); -- Craftkeepers
+		e.other:Faction(56,10,0); -- Craftkeepers
+		e.other:Faction(145,1,0); -- High Council of Erudin
+		e.other:Faction(147,1,0); -- High Guard of Erudin
+		e.other:Faction(143,-1,0); -- Heretics
+		e.other:AddEXP(200);
+		e.other:GiveCash(0,0,0,1);
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 12146})) then
+		e.self:Say("Wise decision!! Little reward for a large deed. Bye.");
+		e.other:Ding();
+		e.other:Faction(56,5,0); -- Craftkeepers
 		e.other:Faction(145,1,0); -- High Council of Erudin
 		e.other:Faction(147,1,0); -- High Guard of Erudin
 		e.other:Faction(143,-1,0); -- Heretics

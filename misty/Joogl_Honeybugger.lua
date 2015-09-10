@@ -31,13 +31,12 @@ function event_trade(e)
 		for i = 1, bandage do
 			--Bandages for Honeybugger (END)
 			e.self:Say("Oh thank you, " .. e.other:GetName() .. ". If you are ever going to gather bixie honeycomb's pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drone's and taking the honeycomb's they sometime's carry. Good luck!!");
-			e.other:AddEXP(10);
-			e.other:Faction(77,10);   -- +Deeppockets
-			e.other:Faction(133,10);  -- +Guardians of the Vale
-			e.other:Faction(208,10);  -- +Mayor Gubbin
-			e.other:Faction(218,10);  -- +Merchants of Rivervale
-			e.other:Faction(369,-10); -- -Coalition of Trade Folk III
-			e.other:Ding();
+			e.other:Faction(218,1);  -- +Merchants of Rivervale
+			e.other:Faction(77,1);   -- +Deeppockets
+			e.other:Faction(133,1);  -- +Guardians of the Vale
+			e.other:Faction(208,1);  -- +Mayor Gubbin
+			e.other:Faction(369,-1); -- -Coalition of Trade Folk III
+			e.other:QuestReward(e.self,0,0,0,0,0,10);
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

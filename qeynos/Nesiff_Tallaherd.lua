@@ -22,7 +22,7 @@ function event_trade(e)
 		e.self:Say("Oh dear. I hope my mistake will not bring too much grief down on poor Weleth. He was told not to order arrows from me after the last time I fouled up their shipment. But Weleth knew I needed the account to stay in business. Could you please rush this new invoice to him right away? Thank you.");
 		e.other:SummonItem(18824); -- Slip of Parchment
 		e.other:Ding();
-		e.other:Faction(217,1,0); -- Merchants of Qeynos
+		e.other:Faction(217,5,0); -- Merchants of Qeynos
 		e.other:Faction(33,-1,0); -- Circle Of Unseen Hands
 		e.other:Faction(9,1,0); -- Antonius Bayle
 		e.other:Faction(47,1,0); -- Coalition of Tradefolk

@@ -24,7 +24,7 @@ function event_trade(e)
 		e.other:Faction(174,10); -- kelethin merchants
 		e.other:Faction(99,1); -- faydark's champions
 		e.other:Faction(92,1); -- emerald warriors
-		e.other:Faction(8,1); -- anti-mage
+		e.other:Faction(8,2); -- anti-mage
 		e.other:AddEXP(1500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

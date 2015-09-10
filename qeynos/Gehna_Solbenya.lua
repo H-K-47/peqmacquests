@@ -26,10 +26,10 @@ function event_trade(e)
 		e.self:Say("The bounty will not be paid until two spectacles are received.");
 		e.self:Say("Excellent work. These foul men have no right to be proficient in the ways of healing. Here then is your bounty. Use it in your continued war against the Karana bandits.");
 		e.other:Ding();
-		e.other:Faction(183,5,0);
-		e.other:Faction(21,-10,0);
-		e.other:Faction(257,5,0);
-		e.other:Faction(135,5,0);
+		e.other:Faction(183,20,0);
+		e.other:Faction(21,-20,0);
+		e.other:Faction(257,15,0);
+		e.other:Faction(135,15,0);
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,1,3,1);
 	end

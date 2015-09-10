@@ -23,10 +23,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13717})) then -- rat head
 		e.self:Say("HA! Good work! I knew you were the person for the job. A regular ratslayer you are. Here is your reward as promised. be sure you keep this between us.");
 		e.other:Ding();
-		e.other:Faction(217,5,0);
-		e.other:Faction(33,-10,0);
-		e.other:Faction(9,5,0);
-		e.other:Faction(47,5,0);
+		e.other:Faction(217,25,0);
+		e.other:Faction(33,-5,0);
+		e.other:Faction(9,3,0);
+		e.other:Faction(47,2,0);
 		e.other:Faction(135,5,0);
 		e.other:AddEXP(250);
 		e.other:GiveCash(4,0,0,0);

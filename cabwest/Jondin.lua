@@ -18,7 +18,11 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12442})) then
 		e.self:Say("You have done well. Here is your reward."); --Text made up
-		e.other:SummonItem(12443);
+		if(math.random(100) < 35) then
+			e.other:SummonItem(12443);
+		end
+		e.other:Faction(24,1,0);
+		e.other:Faction(193,1,0);
 		e.other:Ding();
 	end
 end

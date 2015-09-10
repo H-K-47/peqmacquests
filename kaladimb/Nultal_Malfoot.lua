@@ -17,9 +17,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14030, item2 = 14030, item3 = 14030, item4 = 14030})) then --Skunk Scent Gland
 		e.self:Say("I thank you for your good deed. I trust it was not a problem. Take this scroll. A cleric of this cathedral will find it useful. May the power of Underfoot be with you.");
 		e.other:SummonItem(eq.ChooseRandom(15203,15229,15560,15036,15216)); --Random Spell: Cure Poison, Fear, Furor, Gate, Stun
-		e.other:Faction(44,5); 			--Clerics of Underfoot
-		e.other:Faction(169,5); 		--Kazon Stormhammer
-		e.other:Faction(219,5); 		--Miners Guild 249
+		e.other:Faction(44,5,0); 			--Clerics of Underfoot
+		e.other:Faction(169,5,0); 		--Kazon Stormhammer
+		e.other:Faction(219,3,0); 		--Miners Guild 249
 		e.other:AddEXP(2000);
 		e.other:GiveCash(0,5,0,0); 		--Silver x 5
 		e.other:Ding();

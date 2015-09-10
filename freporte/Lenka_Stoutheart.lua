@@ -27,7 +27,7 @@ function event_trade(e)
 		e.self:Say("Oh!! You must work for that Erudite named Palatos. I guess he won't have to spend anymore money drinking in Freeport. Here. Here is the portrait I kept until he could get me a new boat beacon.");
 		e.other:SummonItem(12146); -- A'kanon's Portrait
 		e.other:Ding();
-		e.other:Faction(361,1,0);
+		e.other:Faction(361,5,0);
 		e.other:Faction(294,1,0);
 		e.other:Faction(143,1,0);
 		e.other:Faction(147,1,0);
