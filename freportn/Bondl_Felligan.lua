@@ -23,7 +23,7 @@ function event_trade(e)
 		e.self:Say("WOW, thanks! This must be worth a fortune! I could drink for a month after sellin' this to one of them fool merchants. I'm going to see how much I can get for it right now!");
 		e.other:Faction(342,100,0);
 		e.other:AddEXP(1000);
-		eq.set_global("shamanbondl","1",0,"F");
+		eq.set_global("shamanbondl","1",1,"F");
 		eq.start(13);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
