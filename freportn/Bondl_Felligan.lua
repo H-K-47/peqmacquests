@@ -32,7 +32,7 @@ end
 function event_waypoint_arrive(e)
 	if(e.wp == 6 and e.self:GetX() == 407 and e.self:GetY() == 235) then
 		e.self:Say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
-	elseif(e.wp == 12) then
+	elseif(e.wp == 12 and e.self:GetX() == 589 and e.self:GetY() == 472) then
 		eq.stop();
 	end	
 end
