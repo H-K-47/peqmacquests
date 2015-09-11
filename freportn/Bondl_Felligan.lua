@@ -7,10 +7,10 @@ function event_say(e)
 		e.self:Emote("suddenly becomes completely sober and says, 'Very well, shaman, please come with me.'");
 		eq.unique_spawn(8117,0,0,62,66,32.1,254);
 		if(e.self:GetX() == 407 and e.self:GetY() == 235) then
-			eq.stop(13);
+			eq.stop();
 			eq.start(14);
 		elseif(e.self:GetX() == 589 and e.self:GetY() == 472) then
-			eq.stop(13);
+			eq.stop();
 			eq.start(15);
 		end
 	end
@@ -33,7 +33,7 @@ function event_waypoint_arrive(e)
 	if(e.wp == 6 and e.self:GetX() == 407 and e.self:GetY() == 235) then
 		e.self:Say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
 	elseif(e.wp == 12) then
-		eq.stop(13);
+		eq.stop();
 	end	
 end
 
