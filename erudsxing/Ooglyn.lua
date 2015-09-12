@@ -7,11 +7,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1666})) then -- Part of Shaman Epic 1.0
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1666}) and e.other:GetFaction(e.self) < 5) then -- Part of Shaman Epic 1.0
 		e.self:Say("Ahhh, tank you, now me can...OH LOOK!! DA SIGN!!!! Oh, sorry you missed it. The sign show you where to wait for da test. Follow me...I like you so I take you there. We goin for a swim, " .. e.other:GetName() .. "!");
 		e.other:Ding();
-		e.other:Faction(342,50,0);
-		e.other:AddEXP(1000);
+		e.other:Faction(342,100,0);
+		e.other:QuestReward(e.self,0,0,0,0,0,1000);
 		e.self:Say("Ok shaman, let us be off.");
 		eq.start(4);
 	end
@@ -19,14 +19,14 @@ function event_trade(e)
 end
 
 function event_waypoint_arrive(e)
-	if(e.wp == 1) then
+	if(e.wp == 17) then
 		e.self:Say("Ok, here is place for you to for waiting. Hab fun shaman!");
-		eq.set_timer("depop",360000);
+		eq.set_timer("depop",60000);
 	end
 end
 
 function event_timer(e)
-	eq.spawn2(98046,0,0,4209.4,-1575.5,-289.4,181);
+	eq.spawn2(98046,0,0,4196,-1586,-280,181);
 	eq.depop_with_timer();
 end
 

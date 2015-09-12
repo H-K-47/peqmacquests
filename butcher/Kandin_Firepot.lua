@@ -22,7 +22,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(342, 10); --Truespirit
 		eq.set_global("wizepicK","1",0,"F");
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 14349})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 14349}) and qglobals["wizepicK"] ~= nil) then
 		e.self:Say("Oh wow! You found the oil! Where is the golem? You didn't hurt him did you? I am very fond of him. Anyways, here is your reward a note and staff to give to that guy you were asking me about.");
 		e.other:Ding();
 		e.other:SummonItem(14339); --Staff of Gabstik

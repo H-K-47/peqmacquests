@@ -22,7 +22,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1665})) then -- Part of Shaman Epic 1.0
 		e.self:Say("WOW, thanks! This must be worth a fortune! I could drink for a month after sellin' this to one of them fool merchants. I'm going to see how much I can get for it right now!");
 		e.other:Faction(342,100,0);
-		e.other:AddEXP(1000);
+		ee.other:QuestReward(e.self,0,0,0,0,0,1000);
 		eq.set_global("shamanbondl","1",1,"F");
 		eq.start(13);
 	end
