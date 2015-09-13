@@ -7,13 +7,17 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1666}) and e.other:GetFaction(e.self) < 5) then -- Part of Shaman Epic 1.0
-		e.self:Say("Ahhh, tank you, now me can...OH LOOK!! DA SIGN!!!! Oh, sorry you missed it. The sign show you where to wait for da test. Follow me...I like you so I take you there. We goin for a swim, " .. e.other:GetName() .. "!");
-		e.other:Ding();
-		e.other:Faction(342,100,0);
-		e.other:QuestReward(e.self,0,0,0,0,0,1000);
-		e.self:Say("Ok shaman, let us be off.");
-		eq.start(4);
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1666})) then -- Part of Shaman Epic 1.0
+		if(e.other:GetCharacterFactionLevel(342) >= 100) then
+			e.self:Say("Ahhh, tank you, now me can...OH LOOK!! DA SIGN!!!! Oh, sorry you missed it. The sign show you where to wait for da test. Follow me...I like you so I take you there. We goin for a swim, " .. e.other:GetName() .. "!");
+			e.other:Ding();
+			e.other:Faction(342,100,0);
+			e.other:QuestReward(e.self,0,0,0,0,0,1000);
+			e.self:Say("Ok shaman, let us be off.");
+			eq.start(4);
+		else
+			e.other:SummonItem(1666);
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
