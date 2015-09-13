@@ -1,3 +1,19 @@
+function event_spawn(e)
+	eq.set_timer("faction",5000);
+end
+
+function event_timer(e)
+	if(e.timer == "faction") then
+		eq.set_proximity(e.self:GetX() - 45, e.self:GetX() + 45, e.self:GetY() - 45, e.self:GetY() + 45, e.self:GetZ() -5, e.self:GetZ() +5);
+	end
+end
+
+function event_enter(e)
+	if(e.other:GetFaction(e.self) > 1) then
+		e.self:AddToHateList(e.other,1);
+	end
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1673})) then

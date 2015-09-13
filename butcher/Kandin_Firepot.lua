@@ -22,13 +22,18 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(342, 10); --Truespirit
 		eq.set_global("wizepicK","1",0,"F");
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 14349}) and qglobals["wizepicK"] ~= nil) then
-		e.self:Say("Oh wow! You found the oil! Where is the golem? You didn't hurt him did you? I am very fond of him. Anyways, here is your reward a note and staff to give to that guy you were asking me about.");
-		e.other:Ding();
-		e.other:SummonItem(14339); --Staff of Gabstik
-		e.other:SummonItem(18168); --note
-		e.other:Faction(342, 10); --Truespirit
-		eq.delete_global("wizepicK");
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 14349})) then
+		if(qglobals["wizepicK"] ~= nil) then
+			e.self:Say("Oh wow! You found the oil! Where is the golem? You didn't hurt him did you? I am very fond of him. Anyways, here is your reward a note and staff to give to that guy you were asking me about.");
+			e.other:Ding();
+			e.other:SummonItem(14339); --Staff of Gabstik
+			e.other:SummonItem(18168); --note
+			e.other:Faction(342, 10); --Truespirit
+			eq.delete_global("wizepicK");
+		else
+			e.self:Say("I have no need for this item " .. e.other:GetName() .. ". You can have it back.")
+			e.other:SummonItem(14349);
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
