@@ -29,9 +29,7 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(51138)) then
-		eq.spawn2(51145,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-	end
+	eq.spawn2(51145,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 end
 
 -- Zone:lakerathe  NPC:51012 -- Shmendrik_Lavawalker

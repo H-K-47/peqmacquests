@@ -31,12 +31,13 @@ function event_trade(e)
 				eq.delete_global("shamanspirit1");
 			else
 				e.self:Say("Whatever.");
-				e.other:Summon(1675);
-				e.other:Summon(1676);
-				e.other:Summon(1677);
+				e.other:SummonItem(1675);
+				e.other:SummonItem(1676);
+				e.other:SummonItem(1677);
 			end
 		end
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 1669,item2 = 1670})) then -- Part of Shaman Epic 1.0
+	end
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1669,item2 = 1670})) then -- Part of Shaman Epic 1.0
 		e.self:Say("This is a sad day. You have failed and strayed from the path set before you. Please try to live as close to the spirits as you are able, though this is the closest you will ever get.");
 		eq.depop_with_timer();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 1669})) then -- Part of Shaman Epic 1.0
