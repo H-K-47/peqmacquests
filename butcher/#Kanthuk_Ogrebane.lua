@@ -36,12 +36,12 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 == 2416})) then
-		e.other:Ding();
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2416})) then
 		e.self:Say("Ahh, I see you have spoken to Ryshon. You seem tired from your long journey. Sit with me as I tell you a tale. A tale about a true friend of mine, a great man known as [Amstaf Trunolis].");
 		eq.set_global("Kanthuk","ghoul",0,"D30");
-		e.other:AddEXP(1000);
+		e.other:QuestReward(e.self,0,0,0,0,0,1000);
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -- Quest by mystic414
