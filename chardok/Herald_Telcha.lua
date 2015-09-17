@@ -28,19 +28,19 @@ function event_trade(e)
 	local item_lib = require("items");
 	local salt = 0;
 	local skin = 0;
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 16972, item2 = 16972, item3 = 16972, item4 = 16972})) then --  Mt. Death Mineral Salts 4x
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 16972, item2 = 16972, item3 = 16972, item4 = 16972}), false) then --  Mt. Death Mineral Salts 4x
 		salt = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 16972, item2 = 16972})) then --  Mt. Death Mineral Salts 2x
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 16972, item2 = 16972}), false) then --  Mt. Death Mineral Salts 2x
 		salt = 1;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135, item3 = 22135, item4 = 22135})) then -- Green Goblin Skin 4x
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135, item3 = 22135, item4 = 22135}), false) then -- Green Goblin Skin 4x
 		skin = 4;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135, item3 = 22135})) then -- Green Goblin Skin 3x
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135, item3 = 22135}), false) then -- Green Goblin Skin 3x
 		skin = 3;		
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135})) then -- Green Goblin Skin 2x
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135,item2 = 22135}), false) then -- Green Goblin Skin 2x
 		skin = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135})) then -- Green Goblin Skin 1x
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22135}), false) then -- Green Goblin Skin 1x
 		skin = 1;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 6476, item2 = 5728})) then -- Head of Skargus & Di'Zok Signet of Service
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 6476, item2 = 5728}), false) then -- Head of Skargus & Di'Zok Signet of Service
 		e.self:Say("Ah hah! You are notworthy indeed amongst the servants of the Sarnak! Perhaps I should have you killed, before your deeds outdo mine.. Hmm.. Guards! Guards! Haha, do not panic menial being, in fact I am most impressed with your service. Here is the ring I promised you in exchange for your efforts.");
 		e.other:Faction(23,500);
 		e.other:Faction(281,500)
