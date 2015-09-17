@@ -38,13 +38,13 @@ function event_trade(e)
 		e.other:Faction(257,5,0);
 		e.other:Faction(183,5,0);
 		e.other:GiveCash(0,0,3,9);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070,item3 = 10070,item4 = 10070}, false)) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070,item3 = 10070,item4 = 10070}, 0)) then
 		moonstone = 4;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070,item3 = 10070}, false)) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070,item3 = 10070}, 0)) then
 		moonstone = 3;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070}, false)) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070,item2 = 10070}, 0)) then
 		moonstone = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070}, false)) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10070}, 0)) then
 		moonstone = 1;
 	end
 	if(moonstone > 0) then
