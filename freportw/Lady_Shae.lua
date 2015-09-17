@@ -26,14 +26,14 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:Faction(100,2,0);
 		e.other:AddEXP(150);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030,item3 = 13030,item4 = 13030}), false) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030,item3 = 13030,item4 = 13030}, false)) then
 		morewine = 1;
 		wine = 3;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030,item3 = 13030}), false) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030,item3 = 13030}, false)) then
 		wine = 3;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030}), false) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030,item2 = 13030}, false)) then
 		wine = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030}), false) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13030}, false)) then
 		wine = 1;
 	end
 	
