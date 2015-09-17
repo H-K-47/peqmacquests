@@ -1,14 +1,14 @@
 local items = {}
 
 function items.check_turn_in(npc, trade, trade_check, keepitems)
-	keepitems = keepitems or true;	
+	keepitems = keepitems or 1;	
 	
 	local trade_return = {};
 	for key, value in pairs(trade) do
 		trade_return[key] = value;
 	end
 	
-	if(keepitems) then
+	if(keepitems == 1) then
 		-- Add all the items handed to us that the NPC needs to the its loottable
 		local founditem = false;
 		for a = 1, 4 do
@@ -40,7 +40,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 				-- This compares the items handed to the NPC with what is specified in the quest.
 				local inst = trade_return["item" .. j];
 				if(inst.valid and trade_check[key] == inst:GetID()) then
-					if(not keepitems) then
+					if(keepitems == 0) then
 						trade_return["item" .. j] = ItemInst();
 					end
 					found = true;
@@ -49,7 +49,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 			end
 
 			if(not found) then
-				if(keepitems) then 
+				if(keepitems == 1) then 
 					-- This compares the items in the NPC's loottable with what is specified in the quest.
 					local hasitem = npc:GetQuestLoot(trade_check[key]);
 					if(hasitem) then
@@ -82,7 +82,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 		item4 = 0;
 	end
 		
-	if(keepitems) then
+	if(keepitems == 1) then
 		-- If the quest requires multiple of the same item, this counts up the NPC's loottable items for us.
 		local count = npc:QuestLootCount(item1, item2, item3, item4);
 		if(not count) then
@@ -123,7 +123,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems)
 		return_money = return_money - trade_check_money;
 	end
 
-	if(not keepitems) then
+	if(keepitems == 0) then
 		--replace trade with trade_return
 		trade.item1 = trade_return.item1;
 		trade.item2 = trade_return.item2;
