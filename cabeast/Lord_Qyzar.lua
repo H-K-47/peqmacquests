@@ -11,7 +11,7 @@ function event_say(e)
 		e.self:Emote("grimaces in pure disgust. 'I have been awaiting the Chalp diagram from a knight named Grizzle, but alas, he has proven himself weak. He has been taken prisoner by one of the Kromdul of Chalp. If only there were another knight I could send to [rescue Grizzle] and return the Chalp diagram...'");
 	elseif(e.message:findi("rescue grizzle")) then --Test of the Zealot (Greenmist Quest 4/8)
 		e.self:Say("If you can find the knight in Chalp and have him hand you the Chalp diagram, you shall become a zealot and wield a zealot khukri. All I need are the Chalp diagram and your knight khukri.");
-	elseif(e.message:findi("matter of betrayal")) then --Test of the Betrayal (Greenmist Quest 5/8)
+	elseif(e.message:findi("matter of betrayal") and e.other:HasItem(5124)) then --Test of the Betrayal (Greenmist Quest 5/8)
 		e.self:Say("One of our agents, a hero by the name of Goxnok, has found evidence that the book entitled 'Charasis' has been taken from this temple and is to be delivered to an unknown foe in the Outlands. Go at once to the lower levels of the temple and greet Goxnok. Hurry, before he departs!");
 		eq.spawn2(106301,0,0,-113,1000,-23.9,30); --
 	elseif(e.message:findi("visceral dagger")) then --Test of the Hero (Greenmist Quest 6/8)

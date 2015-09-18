@@ -1,6 +1,6 @@
 --This version of Hero Goxnok will lead us to the drachnid spy and the traitor. When the spy is killed, a second version of Goxnok will spawn, and he will reveal that he is in fact the traitor. This is all part of Greenmist quest number five.
 function event_say(e)
-	if(e.message:findi("news of the charasis tome")) then
+	if(e.message:findi("charasis tome")) then
 		e.self:Say("The Charasis Tome has been scribed and now another copy exists. The traitor obviously wants to keep a copy for himself. I am told you will deliver both copies to Lord Qyzar along with your zealot khukri and you shall be awarded that of a crusader. Let us rest for a minute and then I shall show you the meeting place.");
 		eq.move_to(-1856,589,146,36,true);
 		e.self:SetAppearance(1);
