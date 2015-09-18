@@ -1,7 +1,7 @@
 --Gandan Tailfist is part of the quest line for the Whistling Fists
 
 function event_say(e)
-	if(e.message:findi("hail")) then
+	if(e.message:findi("hail") and e.other:HasItem(4199)) then
 		e.self:Emote("places a foul smelling book in your hands and speaks to you slowly. 'Take this rotting book given to me by lord Cazic Thule himself, I was given another but it has been lost. The search for the fists will be the end of me. If you are a monk of the final rung show me your Shackle of Tynnonium and I will share with you what I have found.");
 		e.other:SummonItem(18899);
 	end

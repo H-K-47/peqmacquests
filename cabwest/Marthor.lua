@@ -26,7 +26,7 @@ function event_trade(e)
 		eq.set_global("Brew2","1",1,"F");
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 4199})) then
-		e.self:Say("Ah, a monk of the final rung. You should seek Gandan Tailfist in Charasis. He, too, was seeking for a way to advance even further."); --Made this up, unable to find actual text
+		e.self:Say("You earned the Tynnonium Shackle? I am sure you wish to seek the fists of lore. Gandan has come as close as anyone, you would have to talk to him. Last I heard his expedition has taken him to the Howling Stones.");
 		e.other:SummonItem(4199);
 		e.other:Ding();
 		if((eq.get_global["Brew1"] == "0") and (eq.get_global["Brew2"] == "0")) then
