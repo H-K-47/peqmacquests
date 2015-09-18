@@ -1,17 +1,9 @@
-local counter;
-
-function event_spawn(e)
-	counter = 0;
-end
-
 function event_signal(e)
 	local qglobals = eq.get_qglobals();
 
 	if(e.signal == 1) then -- azarack
-		counter = counter + 1;
-		if(counter == 9) then
+		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
 			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,201.5);
-			counter = 0;
 		end
 	elseif(e.signal == 2 and qglobals["keeper"] == nil) then
 		-- eq.set_timer("13",300000); what is this referred to?
