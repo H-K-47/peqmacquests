@@ -1,9 +1,9 @@
 function event_waypoint_arrive(e)
 	if(e.wp == 8) then
-		e.self:SetRunning(1);
+		e.self:SetRunning(true);
 	end
 	if(e.wp == 16) then
-		e.self:SetRunning(0);
+		e.self:SetRunning(false);
 	end
 end
 

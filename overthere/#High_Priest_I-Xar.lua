@@ -6,14 +6,14 @@ function event_signal(e)
 		e.self:MoveTo(2734,2476,-49,195,1);
 	end
 	if(e.signal==3) then
-		e.self:SetRunning(1);
+		e.self:SetRunning(true);
 		eq.start(14);
 	end
 end
 
 function event_waypoint_arrive(e)
 	if(e.wp==28) then
-		e.self:SetRunning(0);
+		e.self:SetRunning(false);
 	end
 end
 
