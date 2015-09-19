@@ -28,7 +28,7 @@ function event_trade(e)
 		e.self:Say("Well done");
 		e.other:QuestReward(e.self,0,0,0,0,4979,1000);
 	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14783, item2 = 3056})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14816, item2 = 3056})) then
 		e.self:Say("Well done");
 		e.other:QuestReward(e.self,0,0,0,0,4977,1000);
 	end
