@@ -2,7 +2,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("turns toward you. A transparent human face materializes upon the skull. As he speaks the smells of rotted rat corpses rushes into your face. You must fight the urge to vomit. 'What discipline do you [follow]?'");
-		e.self:Say("What discipline do you follow?");
 	elseif(e.message:findi("lost circle")) then
 		e.self:Say("Then we are one. The rebirth of our circle shall start with you. I have waited decades for your arrival. You should seek the living brothers within Tunaria. When you have earned your garb then you will be ready for the [true drape].");
 	elseif(e.message:findi("true drape")) then
