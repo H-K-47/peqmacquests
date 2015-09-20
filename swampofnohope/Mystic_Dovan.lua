@@ -11,9 +11,9 @@ function event_say(e)
 		e.self:Say("I can call upon the power of the ancients to mend your wounds if you can deliver to me two brittle Iksar skulls.");
 	elseif(e.message:findi("purge toxins")) then
 		e.self:Say("The toxins shall surely be purged from your system when I have proof of your allegiance to the empire. Let that proof be one goblin watcher signal torch.");
-	elseif(e.message:findi("I come to inquire about the Crusaders of Rok Nikol") and e.other:GetFaction(e.self) < 6 and tonumber(qglobals.shmskullquest) > 5) then
+	elseif(e.message:findi("rok nikol") and e.other:GetFaction(e.self) < 6) then
 		e.self:Say("Mystic Dovan lowers his head in sorrow let us have a moment of peace. I cannot find the words to speak of the unspeakable act of the gods which took the lives of the legendary Crusaders of Rok Nolok. You must find the answers for yourself. All I can do is wait for their return. ");
-	elseif(e.message:findi("Who is Galdon Vok Nir?") and e.other:GetFaction(e.self) < 8 and tonumber(qglobals.shmskullquest) > 5) then
+	elseif(e.message:findi("galdon vok nir?") and e.other:GetFaction(e.self) < 8) then
 		e.self:Say("He is a merchant hiding in The Overthere. He is greedy and will not give the skull up easily. Seek him out and ask him what he would [trade] for the skull.");
 	end
 end
@@ -21,12 +21,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	--Full C.O.R.N. Chest turn in and Cudgel of the Mystic
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12736, item2 = 5143}) and e.other:GetFaction(e.self) < 6 and tonumber(qglobals.shmskullquest) > 5) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12736, item2 = 5143})) then
 		e.self:Say("I see that you have found your answers. Now I must ask you to to retrieve for the council the skulls of the Di Nozok.  The sarnak in Lake of Ill Omen hold one of the skulls, while [Galdon Vok Nir] holds the other. Once you have retrieved them, give them to Hierphant Zand.");
 		e.other:Faction(282, 10); --Scaled Mystics
 		e.other:Faction(193, 10); --Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,0,0,5144,100000); --Give the player the Iron Cudgel of the Prophet
-		eq.set_global("shmskullquest","7",5,"F"); --set a global flag so that user can do shm skull quest part 5
 	end
 	--Cure disease.
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12671})) then--giant blood sac
