@@ -16,10 +16,12 @@ function event_trade(e)
 		eq.stop_timer("sit");
 		eq.start(4);
 		eq.set_timer("Depop",8000);
-		eq.spawn2(93190,0,0,1955,2825,-49,190); --Spawn the golem and three guards
-		eq.spawn2(93303,0,0,1955,2794,-49,190);
-		eq.spawn2(93303,0,0,1954,2855,-49,190);
-		eq.spawn2(93303,0,0,1915,2825,-49,190);
+		eq.spawn2(93002,46,0,2240,2764,-49,190); -- a glowing cliff golem
+		eq.spawn2(93005,5,0,2240,2698,-49,190); -- Watch_Sergeant_Grolj
+		eq.spawn2(93004,47,0,2260,2794,-49,190); -- an_undead_marine
+		eq.spawn2(93004,48,0,2260,2698,-49,190); -- an_undead_marine
+		eq.spawn2(93004,49,0,2280,2794,-49,190); -- an_undead_marine
+		eq.spawn2(93004,50,0,2280,2698,-49,190); -- an_undead_marine
 		eq.signal(93077,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
