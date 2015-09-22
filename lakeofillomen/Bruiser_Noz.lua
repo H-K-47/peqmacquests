@@ -1,23 +1,12 @@
 --Shaman Skull Quest 6
 function event_spawn(e)
 	e.self:Say("Stay out of this, Klok !! I didn't spend 30 seasons in the legion to be pestered by the likes of you!! Here I am, you little croak!! You want my skull? Come and get it!!");
-	eq.signal(85140, 50); --signal Klok_sargin to say something
-	eq.set_timer("attack",120000);
+	eq.signal(85140, 50000); --signal Klok_sargin to say something
 end
 
 function event_signal(e)
 	e.self:Say("Ha!! Who dares to take what is Bruiser's!! I will make swamp mush out of them!!");
-end
-
-function event_timer(e)
-	if(e.timer == "attack") then
-		eq.stop_timer("attack");
-		eq.attack(" .. e.other:GetName() .. ");
-	end
-end
-
-function event_death_complete(e)
-	eq.stop_timer("attack");
+	eq.attack(e.other:GetName());
 end
 
 function event_trade(e)
