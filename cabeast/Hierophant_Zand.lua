@@ -20,15 +20,16 @@ function event_trade(e)
 		e.self:Say("Lucky you. You have earned a second chance. Praise Cazic-Thule!");
 		e.other:SummonItem(5140); 				--Iron Cudgel of the Petitioner
 		e.other:Ding();
+	end
 	--Shaman Skull Quest No.3.1 turn in - Check for  A froglok hex doll
 	if(e.other:GetFaction(e.self) <= 4) then
-		if((item_lib.check_turn_in(e.self, e.trade, {item1 = 12734})) and (e.other:GetFaction(e.self) <= 4)) then
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12734})) then
 			e.self:Say("You have proven your prowess to me, now take this note to Crusader Quarg outside the city and he will test you further.");
 			e.other:Faction(282, 10); 				--Scaled Mystics
 			e.other:Faction(193, 10); 				--Legion of Cabilis
 			e.other:QuestReward(e.self,0,0,0,5,18054,80000); 	--A note to take to crusader Quarg.
 		--Shaman Skull Quest No.5 turn in - Iksar Skull Helm and Iksar Skull and Cudgel of the Prophet
-		elseif((item_lib.check_turn_in(e.self, e.trade, {item1 = 12741, item2 = 5144, item3 = 12740})) and (e.other:GetFaction(e.self) <= 4)) then
+		elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 12741, item2 = 5144, item3 = 12740})) then
 			e.self:Say("You have done well in proving yourself to this council, but we have yet more tests for you before you will be a true clairvoyant. Speak with Hierophant Dexl for your next test.");
 			e.other:Faction(282, 10); 				--Scaled Mystics
 			e.other:Faction(193, 10); 				--Legion of Cabilis
