@@ -2,7 +2,7 @@
 
 
 function event_say(e)
-	if(e.self:HasItem(5145) then
+	if(e.self:HasItem(5145)) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Ahh!! A conversationalist. How good to meet you, Cradossk. Yes. I have heard of you. Go ahead and ask for that which has brought you to my tower and emboldened you to slay my weaker minions.");
 		elseif(e.message:findi("sisters of scale")) then
@@ -16,7 +16,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.self:HasItem(5145) then
+	if(e.self:HasItem(5145)) then
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12764}) then
 			e.other:QuestReward(0,0,0,0,12750);
 			e.self:Shout("Excellent. You show signs of a true Iksar slayer. Too, bad I have already given the skull of the Sister of Scale to another. Perhaps you would like to meet him before he departs. Say hello, Doval.");
