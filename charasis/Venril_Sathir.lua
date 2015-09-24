@@ -1,13 +1,19 @@
-function event_death_complete(e)
-	eq.unique_spawn(105187,0,0,0,-673,8,0);
+local counting;
+
+function event_spawn(e)
+	eq.set_timer("combat",20000);
+	counting = 0;
 end
 
-function event_trade(e)
-	local item_lib = require("items");
-	item_lib.return_items(e.self, e.other, e.trade)
+function event_timer(e)
+	if (e.timer == "combat") then
+		counting = counting + 1;
+	end
+	if(counting == 2) then
+		eq.attack_npc_type(105004);
+	elseif(counting == 3) then
+		eq.unique_spawn(105182,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.depop(105004);
+		eq.depop();
+	end
 end
-
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd and manual edits by Speedz
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------
