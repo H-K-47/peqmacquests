@@ -1,5 +1,5 @@
 function event_death_complete(e)
-	eq.unique_spawn(105187,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ());
+	eq.unique_spawn(105187,0,0,0,-673,8,0);
 end
 
 function event_trade(e)
