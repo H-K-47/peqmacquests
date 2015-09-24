@@ -4,9 +4,9 @@
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Leave me in peace " .. e.other:GetName() .. ", I have little desire for company now. The Faceless sends visions to me that may hold the fate of our race in sway.");
-	elseif(e.message:findi("What Visions?") and (e.other:GetFaction(e.self) <= 4)) then
+	elseif(e.message:findi("visions") and (e.other:GetFaction(e.self) <= 4)) then
 		e.self:Say("The spirits tell me of strange happenings around the ancient city of Charasis. None of the mystics that have been sent to investigate have returned. Something is surely happening in the ancient tombs of that city. I pray to our lord for some way to calm the tortured spirits of our fallen brothers that haunt the Howling Stones.");
-	elseif(e.message:findi("What dreams cloud your mind?") and (e.other:GetFaction(e.self) <= 4)) then
+	elseif(e.message:findi("dreams cloud your mind") and (e.other:GetFaction(e.self) <= 4)) then
 		e.self:Say("I see much darkness...darkness and death. A void of life...the cold grip of death. An Ancient pact...with forces too terrible to describe...A great Leader...a fall, and a second coming. I see...a symbol of...an ancient city...Kaesora. I would begin there young Mystic. The spirits of that fallen city may hold a key to our future.");
 	end
 end
