@@ -26,7 +26,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 3141, item2 = 3145, item3 = 3140, platinum == 900})) then --Platinum x 900, Darkforge Breastplate, Darkforge Greaves, Darkforge Helm
 			e.self:Say("Well done, " .. e.other:GetName() .. ", I honestly didn't expect to see you again. Yes, yes, this is perfect! My mission is nearly complete!");
 			e.other:Faction(342,3);
-			e.self:AddItem(18099,1);
+			eq.unique_spawn(93006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
