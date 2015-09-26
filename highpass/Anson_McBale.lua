@@ -2,12 +2,19 @@ function event_say(e)
 	if(e.other:GetFaction(e.self) <= 5) then
 		if(e.message:findi("hail")) then
 			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
-		elseif(e.message:findi("see stanos")  and  e.other:GetLevel() >= 50) then
+		elseif(e.message:findi("see stanos")  and  e.other:GetLevel() >= 46) then
 			e.self:Say("This better be important.");
 			eq.spawn2(5088,0,0,336,10,45,225);
 		end
 	else
 		e.self:Say("Go away! We don't have time for the likes of you.");
+	end
+end
+
+function event_signal(e)
+	if(e.signal == 1) then
+		e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows [who we are]. . .");
+		eq.signal(5088,1);
 	end
 end
 
