@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Ah, the pouch. This is the first step. The Circle has to be upset having this taken right out from under them. That speaks well of the person who did the taking. Hanns must be even more furious now. I think I might be able to trust you. We could make a deal. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my story, then you decide.");
-		eq.signal(5037,1);
+		eq.signal(5037,2);
 	elseif(e.message:findi("who are you")) then
 		e.self:Say("'(chuckle) You are young, aren't you? I ran [the Circle] out of Qeynos for well over 30 years, and did a right fine job of it. It's a long story, and isn't over yet. I have much to answer for.");
 	elseif(e.message:findi("circle")) then
@@ -23,6 +23,16 @@ function event_say(e)
 	elseif(e.message:findi("clear your name")) then
 		e.self:Say("I need proof that what I say about Johann is truth, so that Hanns may forgive me. YOU can gather that proof for me. First, travel to Kaladim and Neriak, and there, upon the persons of the rogue guildmasters, you should find that which I seek, two parts of a document I recovered from the dead agent. I entrusted one to Founy, but that trust is gone, and Founy would betray me to Hanns were I to attempt to reclaim it. Tani N'mar has the other, which he should not possess, and keeps it only to spite me, not knowing its real importance. Steal them both, and bring them back to me. And don't let anyone follow you! If I am not around, tell Anson you want to see me.");
 		eq.depop();
+	end
+end
+
+function event_combat(e)
+	local StanosFriends ={5019,5038,5107,5056,5055,5050,5051,5037};
+	if(e.joined) then
+		e.self:Shout("I will kill you and your lickspittle friends for this!");
+		for i = 1, 8 do
+			eq.signal(StanosFriends[i],1);
+		end
 	end
 end
 
