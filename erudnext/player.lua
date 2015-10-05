@@ -10,9 +10,12 @@ function event_signal(e)
 	if(e.signal == 1) then
 		e.self:SetBoatID(772);
 		e.self:SetBoatName("Sea_King000");
+		eq.debug("Setting boat to Sea_King000 for " .. e.self:GetName() .. " at " .. e.self:GetX() .. "," .. e.self:GetY() .. "," .. e.self:GetZ() .. "", 1);
+
 	elseif(e.signal == 2) then 
 		e.self:SetBoatID(773);
 		e.self:SetBoatName("Golden_Maiden000");
+		eq.debug("Setting boat to Golden_Maiden000 for " .. e.self:GetName() .. " at " .. e.self:GetX() .. "," .. e.self:GetY() .. "," .. e.self:GetZ() .. "", 1);
 	end
 end
 
