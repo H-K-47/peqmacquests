@@ -1,7 +1,9 @@
 -- Converted to .lua by Speedz
 
 function event_say(e)
-	if (e.message:findi("plague knight boots")) then
+	if(e.message:findi("hail")) then
+		e.self:Say("Hail " .. e.other:GetName() .. "! You must be one of Garret's new knights. Garret has asked me to help get you outfitted in a suit of armor to protect you from the weapons of our foes. I have assembled a kit for you that will allow you to construct the armor pieces once you have gathered the necessary components. The required components vary according to which piece of Plague Knight Armor you are planning on assembling. Do you wish to craft a [plague knight helm], a [plague knight bracer], [plague knight gauntlets], [plague knight boots], [plague knight vambraces], [plague knight greaves], or a [plague knight breastplate].");	
+	elseif (e.message:findi("plague knight boots")) then
 		e.self:Say("To assemble Plague Knight Boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Cat Pelts, and two Clockwork Rat Belly Plates in the Mail Assembly Kit.");
 		e.other:SummonItem(19634);
 		e.other:Ding();
