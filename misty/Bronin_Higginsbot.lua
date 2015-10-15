@@ -34,7 +34,7 @@ function event_trade(e)
 		e.other:Faction(218, 25); -- Merchants of Rivervale
 		e.other:Faction(48, -25); -- Coalition of Tradefolk Underground
 		e.other:Faction(31, -25); -- Carson McCabe
-		eq.attack(" .. e.other:GetName() .. ");
+		eq.attack(e.other:GetName());
 	end
 	if((e.other:GetFaction(e.self) < 5) and (item_lib.check_turn_in(e.self, e.trade, {item1 = 12192}))) then -- Froglok Leg
 		e.self:Say("So I see you have defeated Slaythe. I shall sleep much better now that he is gone. I placed the emerald shard in one of the Highkeep strongboxes in Highpass. Give the bank clerk's assistant, Kiolna this key. There is a [second piece of the gem] which I hid near Kelethin. You will need it to complete the gem. I hope it brings you better luck than I.");
