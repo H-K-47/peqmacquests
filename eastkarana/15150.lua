@@ -15,6 +15,7 @@ function event_waypoint_arrive(e)
 		eq.depop_with_timer(15042);
 		eq.depop_with_timer(15044);	
 		eq.depop(15153);
-		eq.depop(15150);
+		eq.depop(15000);
+		eq.depop();
 	end
 end

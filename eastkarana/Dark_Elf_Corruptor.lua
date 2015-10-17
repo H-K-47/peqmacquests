@@ -18,6 +18,7 @@ function event_waypoint_arrive(e)
 			e.self:Shout("Innoruuk claims your souls and this land!");
 		end
 		eq.depop(15150);
+		eq.depop(15000);
 		eq.depop(15178);
 		eq.depop(15167);
 		eq.depop(15170);

@@ -17,7 +17,7 @@ function event_waypoint_arrive(e)
 	elseif(e.wp == 3) then
 		eq.spawn2(15153,14,0,-996,-1529,354,130); -- corruptor
 		eq.spawn2(15150,13,0,-1090,-1529,355.4,130); -- reaver
-		eq.spawn2(15150,15,0,-1063,-1490,367.5,130); -- reaver
+		eq.spawn2(15000,15,0,-1063,-1490,367.5,130); -- reaver
 	elseif(e.wp == 4) then
 		eq.depop(15178);
 		eq.depop(15167);
