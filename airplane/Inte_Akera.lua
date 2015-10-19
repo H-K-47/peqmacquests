@@ -32,10 +32,12 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 5504},0)) then --soulfire
 			e.self:Say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
 			e.other:QuestReward(e.self,0,0,0,0,18033,100000); --inte's first blessing
-		elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 5403},0)) then --ghoulbane
+		end
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 5403},0)) then --ghoulbane
 			e.self:Say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
 			e.other:QuestReward(e.self,0,0,0,0,18034,100000); 	--inte's second blessing
-		elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18033, item2 = 18034, item3 = 19073, item4 = 1254},0)) then --inte's first blessing, inte's second blessing, miragul's head, miragul's robe
+		end
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18033, item2 = 18034, item3 = 19073, item4 = 1254})) then --inte's first blessing, inte's second blessing, miragul's head, miragul's robe
 			e.self:Say("Long have I awaited this moment. You have done what even I thought impossible. Take this sword, the Fiery Avenger. You have earned both it and my deepest respect.");
 			e.other:QuestReward(e.self,0,0,0,0,11050,1000000); 	--fiery avenger
 			eq.depop();
