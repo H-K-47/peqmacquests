@@ -10,6 +10,9 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_death_complete(e)
+	eq.depop(84007);
+end
 -- For Wurmslayer quest
 -- Quest depends on Squire_Fuzzmin in Firiona for complete functionality
 -- Qadar
