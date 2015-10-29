@@ -14,14 +14,16 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12401, item2 = 5122})) then	--Test of Suffering (Greenmist Quest 3/8)
-		e.self:Say("Excellent work! You are no squire. You are now a knight of the crusaders. Your next step shall be zealot. And every zealot wields a magical khukri.");
-		e.other:SummonItem(5123);
-		e.other:Faction(62,20);
-		e.other:Faction(193,10);
-		e.other:AddEXP(1500);
-		e.other:GiveCash(0,0,15,0);
-		e.other:Ding();
+	if(e.other:GetFaction(e.self) < 5) then
+		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12401, item2 = 5122})) then	--Test of Suffering (Greenmist Quest 3/8)
+			e.self:Say("Excellent work! You are no squire. You are now a knight of the crusaders. Your next step shall be zealot. And every zealot wields a magical khukri.");
+			e.other:SummonItem(5123);
+			e.other:Faction(62,20);
+			e.other:Faction(193,10);
+			e.other:AddEXP(1500);
+			e.other:GiveCash(0,0,15,0);
+			e.other:Ding();
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
