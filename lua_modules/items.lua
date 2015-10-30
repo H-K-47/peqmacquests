@@ -172,10 +172,9 @@ function items.return_items(npc, client, trade, text)
 			-- If the npc does not have this item in their quest loot, then it needs to be returned.
 			if(not npc:GetQuestLoot(inst:GetID())) then
 				npc:DeleteQuestLoot();
-				-- local itemid = inst:GetID();
-				-- local charges = inst:GetCharges();
-				-- client:SummonItem(itemid,charges);
-				client:PushItemOnCursor(inst);
+				local itemid = inst:GetID();
+				local charges = inst:GetCharges();
+				client:SummonItem(itemid, charges, false, 9999, true);
 				if(text == true and npc:CanTalk()) then
 					npc:Say(string.format("I have no need for this item %s, you can have it back.", client:GetCleanName()));
 				end
