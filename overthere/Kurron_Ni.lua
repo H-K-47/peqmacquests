@@ -27,6 +27,7 @@ function event_trade(e)
 			e.self:Say("Well done, " .. e.other:GetName() .. ", I honestly didn't expect to see you again. Yes, yes, this is perfect! My mission is nearly complete!");
 			e.other:Faction(342,3);
 			eq.unique_spawn(93006,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+			eq.depop_with_timer();
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
