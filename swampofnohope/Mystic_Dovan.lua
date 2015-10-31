@@ -11,7 +11,7 @@ function event_say(e)
 		e.self:Say("I can call upon the power of the ancients to mend your wounds if you can deliver to me two brittle Iksar skulls.");
 	elseif(e.message:findi("purge toxins")) then
 		e.self:Say("The toxins shall surely be purged from your system when I have proof of your allegiance to the empire. Let that proof be one goblin watcher signal torch.");
-	elseif(e.message:findi("rok nikol") and e.other:GetFaction(e.self) < 6) then
+	elseif(e.message:findi("rok nilok") and e.other:GetFaction(e.self) < 6) then
 		e.self:Say("Mystic Dovan lowers his head in sorrow let us have a moment of peace. I cannot find the words to speak of the unspeakable act of the gods which took the lives of the legendary Crusaders of Rok Nolok. You must find the answers for yourself. All I can do is wait for their return. ");
 	elseif(e.message:findi("galdon vok nir?") and e.other:GetFaction(e.self) < 8) then
 		e.self:Say("He is a merchant hiding in The Overthere. He is greedy and will not give the skull up easily. Seek him out and ask him what he would [trade] for the skull.");
