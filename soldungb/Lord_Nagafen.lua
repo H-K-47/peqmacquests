@@ -10,7 +10,7 @@ function event_spawn(e)
 	SpawnY = e.self:GetY();
 	SpawnZ = e.self:GetZ();
 	SpawnH = e.self:GetHeading();
-	local range = 220;
+	local range = 230;
 	eq.set_proximity(SpawnX - range, SpawnX + range, SpawnY - range, SpawnY + range);
 end
 
