@@ -5,11 +5,13 @@ function event_signal(e)
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
 			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,201.5);
 		end
-	elseif(e.signal == 2 and qglobals["keeper"] == nil) then
-		-- eq.set_timer("13",300000); what is this referred to?
-		eq.set_global("keeper","1",3,"H2");
-		-- supposed to be 60-85 minute timer
-		eq.set_timer("87",math.random(1500000) + 3600000);
+	elseif(e.signal == 2) then
+		if(qglobals["keeper"] == nil) then
+			-- eq.set_timer("13",300000); what is this referred to?
+			eq.set_global("keeper","1",3,"H2");
+			-- supposed to be 60-85 minute timer
+			eq.set_timer("soul",math.random(720000) + 2880000);
+		end
 	end
 end
 
@@ -20,8 +22,8 @@ function event_say(e)
 end
 
 function event_timer(e)
-	if(e.timer == "87") then
-		eq.spawn2(71075,0,0,-996.3,910.5,192.3,18.0);
+	if(e.timer == "soul") then
+		eq.unique_spawn(71075,0,0,-996.3,910.5,192.3,18.0);
 	end
 end
 
