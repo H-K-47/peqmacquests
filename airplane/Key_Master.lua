@@ -1,5 +1,5 @@
 function event_signal(e)
-	local qglobals = eq.get_qglobals();
+	local qglobals = eq.get_qglobals(e.self,e.other);
 
 	if(e.signal == 1) then -- azarack
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
