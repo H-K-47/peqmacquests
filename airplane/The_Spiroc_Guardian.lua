@@ -1,5 +1,7 @@
 function event_death_complete(e)
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71009)
+		or eq.get_entity_list():IsMobSpawnedByNpcTypeID(71020)
+		or eq.get_entity_list():IsMobSpawnedByNpcTypeID(71022)
 		or eq.get_entity_list():IsMobSpawnedByNpcTypeID(71008)
 		or eq.get_entity_list():IsMobSpawnedByNpcTypeID(71007)
 		or eq.get_entity_list():IsMobSpawnedByNpcTypeID(71015)

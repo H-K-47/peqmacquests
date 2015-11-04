@@ -39,6 +39,9 @@ function event_timer(e)
 				function(ent, hate, damage, frenzy)
 					if(ent:IsClient()) then
 						ent:CastToClient():Message(4,"I will not fight you, but I shall banish you!");
+						if(ent:CastToClient():GetBindZoneID() == 32) then
+							ent:CastToClient():SetBindPoint(27,0,534,913,55);
+						end
 						ent:CastToClient():MovePC(27,534,913,55,0);
 					end
 				end,
