@@ -1,11 +1,12 @@
 function event_signal(e)
-	local qglobals = eq.get_qglobals(e.self,e.other);
+	local qglobals = eq.get_qglobals();
 
 	if(e.signal == 1) then -- azarack
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
 			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,201.5);
 		end
-	elseif(e.signal == 2) then
+	end
+	if(e.signal == 2) then
 		if(qglobals["keeper"] == nil) then
 			-- eq.set_timer("13",300000); what is this referred to?
 			eq.set_global("keeper","1",3,"H2");
