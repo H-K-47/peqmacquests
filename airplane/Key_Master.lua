@@ -25,6 +25,7 @@ end
 function event_timer(e)
 	if(e.timer == "soul") then
 		eq.unique_spawn(71075,0,0,-996.3,910.5,192.3,18.0);
+		eq.stop_timer("soul");
 	end
 end
 
