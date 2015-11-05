@@ -25,9 +25,8 @@ function event_trade(e)
 			e.other:AddEXP(5000);
 			e.other:Ding();
 		end
-		item_lib.return_items(e.self, e.other, e.trade)
 	end
-	item_lib.clear_inventory(e.self, e.trade)
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 --Submitted by: Jim Mills
