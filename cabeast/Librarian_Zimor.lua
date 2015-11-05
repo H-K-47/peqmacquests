@@ -8,7 +8,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(e.other:GetFaction(e.self) < 5) then
+	if(e.other:GetFaction(e.self) < 8) then -- dubious or better
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 3887})) then
 			e.self:Emote("looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. 'This book may alter the reality you see before you, 'the scholar says as he continues to read the tome. 'The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome.' The Librarian hands you a note and turns his attention back to the book.");
 			e.other:SummonItem(3895);
