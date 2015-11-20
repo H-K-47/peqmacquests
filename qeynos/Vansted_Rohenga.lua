@@ -43,16 +43,13 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 27416,item2 = 27405,item3 = 27405})) then
-		e.self:Say(string.format("Congratulations, %s!  Your dedication and hard work will allow me to position my troops accordingly.  Take this mace as a reward!",e.other:GetName())); -- ad lib text
-		e.other:SummonItem(27489);
-		e.other:Ding();
-		e.other:Faction(257,10,0);
+		e.self:Say("These are exactly what I was looking for " .. e.other:GetName() .. "! I am very proud to have one as noble as yourself amongst our ranks! Please take this mace as a token of my appreciation. I bid you farewell, and safe travels.");
 		e.other:Faction(183,10,0);
 		e.other:Faction(21,-10,0);
-		e.other:Faction(135,10,0);
-		e.other:AddEXP(1000);
+		e.other:Faction(257,7,0);
+		e.other:Faction(135,7,0);
+		e.other:QuestReward(e.self,0,0,0,0,27489,1000);
 	end
-	
 	item_lib.return_items(e.self, e.other, e.trade)
 	
 end

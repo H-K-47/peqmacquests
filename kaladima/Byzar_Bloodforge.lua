@@ -23,19 +23,19 @@ function event_trade(e)
 		e.other:Faction(219,1);   -- MinersGuild249 better
 		e.other:Faction(215,1);   -- MerchantsOfKaladim better
 		e.other:Faction(57,-1);   -- CraknekWarriors worse
-		e.other:AddEXP(10000);
+		e.other:AddEXP(1000);
 		e.other:GiveCash(7,1,2,0);
 		e.other:Ding();
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13741, item2 = 13740})) then
 		e.self:Say("I underestimated you.  You are truly a great warrior.  I reward you with a piece of my own Bloodforge armor.  You would be fine Bloodforge Brigade material!  How would you like to [take a little trip] in the name of the Bloodforge Brigade?");
 		e.other:SummonItem(eq.ChooseRandom(3090,3090,3090,3090,3090,3090,3091,3092,3093,3094,3095,3096));
-		e.other:Faction(314,5);   -- StormGuard better
-		e.other:Faction(169,1);   -- KazonStormhammer better
-		e.other:Faction(219,1);   -- MinersGuild249 better
-		e.other:Faction(215,1);   -- MerchantsOfKaladim better
-		e.other:Faction(57,-1);   -- CraknekWarriors worse
-		e.other:AddEXP(10000);
+		e.other:Faction(314,20);   -- StormGuard better
+		e.other:Faction(169,3);   -- KazonStormhammer better
+		e.other:Faction(219,3);   -- MinersGuild249 better
+		e.other:Faction(215,5);   -- MerchantsOfKaladim better
+		e.other:Faction(57,-5);   -- CraknekWarriors worse
+		e.other:AddEXP(1000);
 		e.other:Ding();
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12136})) then
