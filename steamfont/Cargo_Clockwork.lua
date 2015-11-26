@@ -27,9 +27,9 @@ function event_waypoint_depart(e)
 			delivery = 1;
 			e.self:Emote("Chuga.. Chug..Chug..");
 			e.self:Emote("The chugging of the Cargo Clockwork comes to a halt.");
-			eq.spawn2(56178,0,0,30,-700,-109,62); --Hector
-			eq.spawn2(56179,0,0,95,-732,-108,240); --Renaldo
-			eq.spawn2(56180,0,0,53,-615,-107,113); --Jerald
+			eq.unique_spawn(56178,0,0,30,-700,-109,62); --Hector
+			eq.unique_spawn(56179,0,0,95,-732,-108,240); --Renaldo
+			eq.unique_spawn(56180,0,0,53,-615,-107,113); --Jerald
 			e.self:Say("This is highway robbery.");
 		end
 	end
