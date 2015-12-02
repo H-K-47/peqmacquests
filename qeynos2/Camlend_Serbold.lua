@@ -9,7 +9,8 @@ function event_say(e)
 		if(e.message:findi("lord grimrot")) then
 			e.self:Say("You have heard of Lord Grimrot? He is a shadowknight working with the Bloodsabers. We have word he is trying to build an army of undead. Only a powerful knight can rid the lands of Grimrot. So, did you come here to [defend life]?");
 		elseif(e.message:findi("defend life")) then
-			e.self:Say("Do you feel your heart beating within your chest?  It is Rodcet Nife, the Prime Healer, whose breath keeps it in perfect rhythm.  If you do not pray to His glory then I assure you, someday when your heart begins to slow, you shall be crying out loud to Rodcet Nife.");
+			e.self:Say("Then go to the Plains of Karana. Somewhere there, Lord Grimrot is hatching his little plan for the Bloodsabers. Bring me his evil scythe and his heart. It is said that upon his death, his soul will be absorbed into this weapon of darkness. Do this and be rewarded.");
+			e.self:Say("We must have both Lord Grimrot's scythe, Pestilence,and his misshapen heart.");
 		end
 	end
 end
