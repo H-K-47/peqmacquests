@@ -1,3 +1,12 @@
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("'You need something, or are you just browsing?");
+	elseif(e.message:findi("about stanos")) then
+		e.self:Say("What? <she looks shaken> I see it is time to make my choices. Forget you mentioned that name, " .. e.other:GetName() .. ". Leave me.");
+		e.self:DoAnim(12);
+	end
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 	item_lib.return_items(e.self, e.other, e.trade)
