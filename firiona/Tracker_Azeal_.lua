@@ -10,7 +10,7 @@ function event_trade(e)
 			e.other:Ding();
 			eq.spawn2(84319,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 			eq.spawn2(84311,0,0,-1822,617,142.5,103);
-			eq.depop();
+			eq.depop_with_timer();
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
