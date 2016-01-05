@@ -11,7 +11,7 @@ function event_signal(e)
 			-- eq.set_timer("13",300000); what is this referred to?
 			eq.set_global("keeper","1",3,"H2");
 			-- supposed to be 60-85 minute timer
-			eq.set_timer("soul",math.random(720000) + 2880000);
+			eq.set_timer("soul",math.random(1920000) + 2880000);
 		end
 	end
 end
