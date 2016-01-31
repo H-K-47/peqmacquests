@@ -3,13 +3,14 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-	entity_list = eq.get_entity_list();
-
 	if(e.timer == "follow") then
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(30061);
-		local follow_mob = mobtypeID:GetID();
-		eq.follow(follow_mob);
-		eq.stop_timer("follow");
+		local mobtypeID =  eq.get_entity_list():GetMobByNpcTypeID(30061);
+		
+		if(mobtypeID) then
+			local follow_mob = mobtypeID:GetID();
+			eq.follow(follow_mob);
+			eq.stop_timer("follow");
+		end
 	end
 end
 

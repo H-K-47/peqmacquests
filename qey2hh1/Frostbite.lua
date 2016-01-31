@@ -16,16 +16,18 @@ function event_timer(e)
 	local bad_thief = eq.ChooseRandom(12190,12190,12190,12190,12190,12191);
 	local random_x = eq.ChooseRandom(-3461,-3902,-4011);
 	local random_y = eq.ChooseRandom(-1457,-3240,-1362);
-	entity_list = eq.get_entity_list();
 	
 	if(e.timer == "go") then
 		eq.stop_timer("go");
 		eq.set_timer("depop",1200000);
 		eq.unique_spawn(bad_thief,11,0,random_x,random_y,10,0);
 		e.self:SetRunning(true);
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(bad_thief);
-		local follow_mob = mobtypeID:GetID();
-		eq.follow(follow_mob);
+		local mobtypeID =  eq.get_entity_list():GetMobByNpcTypeID(bad_thief);
+		
+		if(mobtypeID) then
+			local follow_mob = mobtypeID:GetID();
+			eq.follow(follow_mob);
+		end
 	elseif(e.timer == "depop") then
 		eq.depop_with_timer();
 	end
