@@ -35,5 +35,6 @@ function event_timer(e)
 		eq.spawn2(13120,4,0,-1713,1075,17,0);
 		eq.spawn2(13120,4,0,-1690,363,-7,0);
 		eq.spawn2(13120,4,0,-2604,222,-44,0);
+		eq.stop_timer("spawns");
 	end
 end
