@@ -62,6 +62,7 @@ end
 function event_timer(e)
 	if(e.timer == "86") then
 		eq.signal(1005,1);
+		eq.stop_timer("86");
 	end
 end
 
