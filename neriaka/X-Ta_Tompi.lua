@@ -37,52 +37,52 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10083, item2 = 10035, item3 = 14160, item4 = 10019})) then
 		e.self:Say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
 		e.other:SummonItem(11829);
-		e.other:Faction("322","10"); 	-- The Dead
-		e.other:Faction("268","10"); 	-- Queen Cristanos Thex
-		e.other:Faction("177","-10"); 	-- King Naythox Thex
-		e.other:Faction("170","-10"); 	-- Keepers of the Art
-		e.other:Faction("91","-10"); 	-- Eldritch Collective
-		e.other:Faction("260","-10"); 	-- Primordial Malice
-		e.other:AddEXP(62000); 			--Approx half a blue at level 31
+		e.other:Faction(322,10); 	-- The Dead
+		e.other:Faction(268,10); 	-- Queen Cristanos Thex
+		e.other:Faction(177,-10); -- King Naythox Thex
+		e.other:Faction(170,-10); -- Keepers of the Art
+		e.other:Faction(91,-10); 	-- Eldritch Collective
+		e.other:Faction(260,-10); -- Primordial Malice
+		e.other:AddEXP(62000); 		--Approx half a blue at level 31
 		e.other:Ding();
 	--Words of Dark Paths
 	--Requires: 1 Sphere of Unrest, 1 Eye of Urd, 1 Star Rose Quartz
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10520, item2 = 10523, item3 = 10021, item4 = 10019})) then
 		e.self:Say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
 		e.other:SummonItem(11850);
-		e.other:Faction("322","10"); 	-- The Dead
-		e.other:Faction("268","10"); 	-- Queen Cristanos Thex
-		e.other:Faction("177","-10"); 	-- King Naythox Thex
-		e.other:Faction("170","-10"); 	-- Keepers of the Art
-		e.other:Faction("91","-10"); 	-- Eldritch Collective
-		e.other:Faction("260","-10"); 	-- Primordial Malice
-		e.other:AddEXP(62000); 			--Approx half a blue at level 31
+		e.other:Faction(322,10); 	-- The Dead
+		e.other:Faction(268,10); 	-- Queen Cristanos Thex
+		e.other:Faction(177,-10); -- King Naythox Thex
+		e.other:Faction(170,-10); -- Keepers of the Art
+		e.other:Faction(91,-10); 	-- Eldritch Collective
+		e.other:Faction(260,-10); -- Primordial Malice
+		e.other:AddEXP(62000); 		--Approx half a blue at level 31
 		e.other:Ding();
 	--Words of Acquisition (Beza)
 	--Requires: 1 Fetid Skin, 1 Scare Straw, 1 Turmoil Warts, 1 Pearl
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13150, item2 = 13152, item3 = 8331, item4 = 10024})) then
 		e.self:Say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
 		e.other:SummonItem(11866);
-		e.other:Faction("322","10"); 	-- The Dead
-		e.other:Faction("268","10"); 	-- Queen Cristanos Thex
-		e.other:Faction("177","-10"); 	-- King Naythox Thex
-		e.other:Faction("170","-10"); 	-- Keepers of the Art
-		e.other:Faction("91","-10"); 	-- Eldritch Collective
-		e.other:Faction("260","-10"); 	-- Primordial Malice
-		e.other:AddEXP(62000); 			--Approx half a blue at level 31
+		e.other:Faction(322,10); 	-- The Dead
+		e.other:Faction(268,10); 	-- Queen Cristanos Thex
+		e.other:Faction(177,-10); -- King Naythox Thex
+		e.other:Faction(170,-10); -- Keepers of the Art
+		e.other:Faction(91,-10); 	-- Eldritch Collective
+		e.other:Faction(260,-10); -- Primordial Malice
+		e.other:AddEXP(62000); 		--Approx half a blue at level 31
 		e.other:Ding();
 	--Words of Obligation
 	--Requires: 1 Globe of Fear, 1 Eye of Jin, 1 Jade
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10521, item2 = 10525, item3 = 10023, item4 = 10024})) then
 		e.self:Say("You have quested well - With spell and sword - Accept our thanks - And this reward.");
 		e.other:SummonItem(11863);
-		e.other:Faction("322","10"); 	-- The Dead
-		e.other:Faction("268","10"); 	-- Queen Cristanos Thex
-		e.other:Faction("177","-10"); 	-- King Naythox Thex
-		e.other:Faction("170","-10"); 	-- Keepers of the Art
-		e.other:Faction("91","-10"); 	-- Eldritch Collective
-		e.other:Faction("260","-10"); 	-- Primordial Malice
-		e.other:AddEXP(62000); 			--Approx half a blue at level 31
+		e.other:Faction(322,10); 	-- The Dead
+		e.other:Faction(268,10); 	-- Queen Cristanos Thex
+		e.other:Faction(177,-10); -- King Naythox Thex
+		e.other:Faction(170,-10); -- Keepers of the Art
+		e.other:Faction(91,-10); 	-- Eldritch Collective
+		e.other:Faction(260,-10); -- Primordial Malice
+		e.other:AddEXP(62000); 		--Approx half a blue at level 31
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
