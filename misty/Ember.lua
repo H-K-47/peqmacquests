@@ -3,14 +3,16 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-	entity_list = eq.get_entity_list();
 
 	if(e.timer == "follow") then
 		local opponentID = 33066;
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(opponentID);
-		local follow_mob = mobtypeID:GetID();
-		eq.follow(follow_mob,10);
-		eq.stop_timer("follow");
+		local mobtypeID =  eq.get_entity_list():GetMobByNpcTypeID(opponentID);
+		
+		if(mobtypeID) then
+			local follow_mob = mobtypeID:GetID();
+			eq.follow(follow_mob,10);
+			eq.stop_timer("follow");
+		end
 	end
 end
 

@@ -1,4 +1,4 @@
-# Wolf Meat for Wista
+--# Wolf Meat for Wista
 -- Converted to .lua by Speedz
 
 function event_say(e)
