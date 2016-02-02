@@ -1,13 +1,11 @@
 function event_say(e)
 
-	local tax = eq.get_qglobals(e.other);
-	
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Oh, it's so nice to see you again %s. Why don't you have a look around and buy something nice for yourself today?",e.other:GetName()));
-	elseif(e.message:findi("tax collection") and tax.tax_collection ~= nil) then
+	elseif(e.message:findi("tax")) then -- triggers without starting quest
 		e.self:Say(string.format("Oh dear. We had forgotten about those pesky taxes. Here you go, %s. Sorry you had to come collect them. We will try to be on time from now on.",e.other:GetName()));
 		e.other:SummonItem(13179);
-		e.other:Faction(217,-10,0);
+		e.other:Faction(217,-1,0);
 	end
 	
 end

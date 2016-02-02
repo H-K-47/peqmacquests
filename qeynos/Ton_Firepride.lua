@@ -1,6 +1,4 @@
 function event_say(e)
-
-	local tax = eq.get_qglobals(e.other);
 	
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, adventurer!  A mighty warrior such as yourself deserves only the finest in armor and we here at Firepride's were trained by the finest dwarven smiths.  We shall be branching out and crafting [other items] soon, also.");
@@ -8,9 +6,9 @@ function event_say(e)
 		e.self:Say("Well, soon I shall be showing my fantastic art inweapons making. I would hate to have the good people of Qeynos continue purchasing inferior weapons from that so-called blacksmith at [Ironforge Estates].");
 	elseif(e.message:findi("ironforge estate")) then
 		e.self:Say("The Ironforge family has called Qeynos their own for far too long. He was never trained inthe dwarven techniques as I was. He will not be cornering the weapons market very much longer.");
-	elseif(e.message:findi("tax collection") and tax.tax_collection ~= not nil) then
+	elseif(e.message:findi("tax")) then
 		e.self:Say("Oh I see, Vicus has got some other sap to do his work. Fine. Here are your stinking taxes. If Kane were in charge, things would be different around here.");
-		e.other:Faction(53,-10);
+		e.other:Faction(53,-1);
 		e.other:SummonItem(13170);
 	end
 	

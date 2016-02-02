@@ -16,7 +16,6 @@ function event_say(e)
 	elseif(e.message:findi("help")) then
 		e.self:Say("Oh thank <cough> you so <cough> <cough> much <cough>..  Here is the official collection box.  Please collect from each merchant on the <cough> [list].  Then bring me back the combined total of all your collections.");
 		e.other:SummonItem(17012);
-		eq.set_global("tax_collection","0",5,"F");
 	elseif(e.message:findi("list")) then
 		e.self:Say("Oh.  <cough>  I am sorry..  I forgot to give it to you.  Here you go.  Be sure to give that back when your job is finished.  <cough>");
 		e.other:SummonItem(18009);
@@ -28,7 +27,6 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13181,item2 = 18009})) then
 		e.self:Say("<cough> Great! Thank you so much. Here is a small gratuity for a job well done. Thank you again. <cough> Antonius Bayle and the People of Qeynos appreciate all yo have done.");
-		eq.delete_global("tax_collection");
 		e.other:Ding();
 		e.other:Faction(9,10,0);
 		e.other:Faction(135,4,0);

@@ -18,10 +18,10 @@ function event_trade(e)
 		e.self:Say("Yeah, well, these are pretty hard to come by. In fact, these came all the way from Odus. Enjoy, and tell your buddies.");
 		e.other:Ding();
 		e.other:SummonItem(18006);
-		e.other:Faction(33,2,0);
-		e.other:Faction(217,-2,0);
-		e.other:Faction(53,2,0);
-		e.other:Faction(135,-2,0);
+		e.other:Faction(33,1,0);
+		e.other:Faction(217,-1,0);
+		e.other:Faction(53,1,0);
+		e.other:Faction(135,-1,0);
 		e.other:Faction(164,2,0);
 		e.other:AddEXP(200);
 	end
