@@ -9,13 +9,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18801})) then
 		e.self:Say("My sister is in danger. She is all the family I have left. I shall be on my way soon. Please take her my handkerchief, so she knows you have contacted me. Thank you. I am thankful Nerissa ran into you. I just wonder why she did not tell Kane about her suspicions.");
-		e.other:SummonItem(13302);
+		e.other:SummonItem(13302); -- Monogrammed Cloth
 		e.other:Ding();
-		e.other:Faction(311,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(53,-10,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,10,0);
+		e.other:Faction(311,10,0); -- confirmed live factions
+		e.other:Faction(135,2,0);
+		e.other:Faction(53,-1,0);
+		e.other:Faction(105,-1,0);
+		e.other:Faction(184,2,0);
 		e.other:AddEXP(2000);
 		eq.unique_spawn(15193,11,0,-5521,-1870,3,226);
 		e.other:GiveCash(0,0,0,0);
@@ -23,11 +23,11 @@ function event_trade(e)
 		e.self:Say("Oh great!! I thought I'd saw that last of Plagus, or as all the women in the Steel Warriors called him, the Plague. Please do not tell him where I am. It must have been a long journey for you. Here. A little something for your wasted trip. I found it on the ground. Have fun going back to Freeport.");
 		e.other:SummonItem(eq.ChooseRandom(3040,5231,1037,17005,13003,10008,1005,8791,1336,2910));
 		e.other:Ding();
-		e.other:Faction(311,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(53,-10,0);
-		e.other:Faction(105,-10,0);
-		e.other:Faction(184,10,0);
+		e.other:Faction(311,5,0); -- confirmed live factions
+		e.other:Faction(135,1,0);
+		e.other:Faction(53,-1,0);
+		e.other:Faction(105,-1,0);
+		e.other:Faction(184,1,0);
 		e.other:AddEXP(2000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
