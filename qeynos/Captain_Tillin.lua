@@ -36,6 +36,7 @@ function event_trade(e)
 		eq.spawn2(1202,62,0,-412,75,-24,0);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18912}, 0)) then
 		e.self:Say("So, an assassin has been sent to Qeynos! I shall have my guards keep an eye out for any suspicious looking visitors. As for you... you should speak with the Surefall Glade ambassador. Ambassador Gash is staying at the Lion's Mane Inn here in South Qeynos. Inform him that [an assassin has been sent to kill] him. Do not let the assassin near him!");
+		-- confirmed live factions
 		e.other:Faction(135,5,0); -- Guards of Qeynos
 		e.other:Faction(9,1,0); -- Antonius Bayle
 		e.other:Faction(53,-1,0); -- Corrupt Qeynos Guards
@@ -47,6 +48,7 @@ function event_trade(e)
 	if(fang > 0) then
 		repeat
 			e.self:Say("Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.");
+			-- confirmed live factions
 			e.other:Faction(135,3); -- Guards of Qeynos
 			e.other:Faction(9,1); -- Antonius Bayle
 			e.other:Faction(53,-1); -- Corrupt Qeynos Guards

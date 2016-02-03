@@ -18,6 +18,8 @@ function event_say(e)
 	elseif(e.message:findi("deliver a note")) then
 		if(e.other:GetLevel() < 4) then
 			e.self:Say("I cannot discuss such things with a person as young to the world as you are.");
+		elseif(e.other:GetLevel() > 65) then
+			e.self:Say("I cannot trouble a person of your stature with such trivial talk.");
 		else
 			e.self:QuestSay(e.other, "Here you go then, brave adventurer. Godspeed to you.");
 			e.other:SummonItem(18801);

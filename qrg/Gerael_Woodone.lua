@@ -20,6 +20,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18911})) then
 		e.self:Say("Oh my!! Our Qeynos Ambassador, Gash, is in danger. Please take the note over to Captain Tillin of the Qeynos Guard then find Gash and inform him [they are trying to kill him]. Go!!");
 		e.other:Ding();
+		 -- confirmed live factions
 		e.other:Faction(159,15,0); -- Jaggedpine Treefolk
 		e.other:Faction(265,3,0); -- Protector of the Pine
 		e.other:Faction(267,2,0); -- QRG Protected Animals
@@ -30,11 +31,11 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 12141})) then
 		e.self:Say("So the Unkempt Druids are alive and well.  We shall keep a watchful eye out as should you.  Take this for your bravery and defense of the Jaggedpine.");
 		e.other:Ding();
-		e.other:Faction(265,10,0);
-		e.other:Faction(159,10,0);
-		e.other:Faction(267,10,0);
-		e.other:Faction(347,-30,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(265,20,0); -- confirmed live factions
+		e.other:Faction(159,5,0);
+		e.other:Faction(267,3,0);
+		e.other:Faction(347,-5,0);
+		e.other:Faction(135,3,0);
 		e.other:AddEXP(20000);
 		e.other:GiveCash(random_copper,random_silver,random_gold,0);
 	end

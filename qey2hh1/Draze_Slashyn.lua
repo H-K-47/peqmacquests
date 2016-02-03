@@ -12,4 +12,11 @@
 
 function event_spawn(e)
 	eq.move_to(-7756,-3726,1);
+	eq.set_timer("shout",5000)
+end
+
+function event_timer(e)
+	e.self:Emote("shouts 'Come out of that house, Linaya Sowlin!! I am waiting! It is time for you to die!'")
+	e.self:Say("I shall chop you down as your people chopped down the beauty of the forests!!")
+	eq.stop_timer("shout")
 end
