@@ -12,6 +12,7 @@ function event_trade(e)
 		local random_silver = math.random(8);
 		e.self:Say("What is this? Hmmm. It seems Weleth has a problem with following orders. I will deal with him. Good work in bringing this to my attention. Our job here would be much more difficult without the help of loyal citizens like yourself. Take this as a token of Commander Kane's appreciation.");
 		e.other:Ding();
+		-- confirmed live factions
 		e.other:Faction(53, 25,0); -- Corrupt Qeynos Guards
 		e.other:Faction(135, -3,0); -- Guards of Qeynos
 		e.other:Faction(164, 3,0); -- Kane Bayle

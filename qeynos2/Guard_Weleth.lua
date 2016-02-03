@@ -8,6 +8,16 @@ function event_say(e)
 	elseif(e.message:findi("arrows")) then
 		e.self:Say("Oh, thank you! Here is the crate. Make sure [Nesiff] sends me back a new invoice. [Lieutenant Dagarok] would have my head if he found out this happened again!");
 		e.other:SummonItem(13925); -- Crate of Defective Arrows
+	elseif(e.message:findi("Lieutenant Dagarok")) then
+		e.self:Say("Lieutenant Dagarok is the officer in charge of all of North Qeynos.  He is difficult to get along with and I [do not trust him].");
+	elseif(e.message:findi("do not trust him")) then
+			if(e.other:GetFaction(e.self) > 5) then
+				e.self:Say("I don't feel comfortable talking to you about that.");	
+			elseif(e.other:GetFaction(e.self) > 3) then
+				e.self:Say("While I do realize you are a loyal citizen, I cannot help you with that... yet.");
+			else
+				e.self:Say("Late one night not long ago, after I was off duty, I witnessed Lieutenant Dagarok and a few others slay someone they claimed was a suspected necromancer. I had met their victim the day before and I know he was an innocent paladin from Freeport. What really shocked me was that Dagarok was bathed in an evil green glow as their victim crumpled to the ground. I don't know who to trust any more!");
+			end
 	end
 end
 
@@ -18,6 +28,7 @@ function event_trade(e)
 		e.self:Say("Thank you so much for the favor. Please be careful here in Qeynos. I have come to suspect that even some of my fellow guards are not to be trusted - Lieutenant Dagarok, for one.");
 		local random_cp = math.random(8);
 		e.other:Ding();
+		-- confirmed live factions
 		e.other:Faction(135,25,0); -- Guards of Qeynos
 		e.other:Faction(9,3,0); -- Antonius Bayle
 		e.other:Faction(33,-3,0); -- Circle Of Unseen Hands
