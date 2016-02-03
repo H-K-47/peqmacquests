@@ -8,7 +8,7 @@ function event_trade(e)
 		e.other:Faction(135, 1,0);
 		e.other:Faction(273, -1,0);
 		e.other:Faction(207, -1,0);
-		e.other:QuestReward(e.self,0,0,0,0,11010,5000); -- Placeholder Scroll
+		e.other:QuestReward(e.self,0,0,0,0,11010,5000); -- Placeholder Scroll, real reward Cloak of Hazy Memories was added after 2012
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
