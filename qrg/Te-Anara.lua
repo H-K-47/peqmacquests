@@ -39,13 +39,14 @@ function event_trade(e)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18807})) then -- Sealed Letter [Note To Jaggedpine - real]
 		e.self:Say("Aye! This is good news. We shall try to supply Qeynos with a limited number of acres to begin their lumberyard. Here, my good messenger. A token to share in the good news.");
 		e.other:Ding();
-		e.other:Faction(159, 10,0); --Jaggedpine Treefolk
-		e.other:Faction(265, 10,0); --Protectors of Pine
-		e.other:Faction(267, 10,0); --QRG Protected Animals
-		e.other:Faction(347, -15,0); --Unkempt Druids
-		e.other:Faction(135, 10,0);   --Guards of Qeynos
+		-- confirmed live factions		
+		e.other:Faction(159, 30,0); --Jaggedpine Treefolk
+		e.other:Faction(265, 7,0); --Protectors of Pine
+		e.other:Faction(267, 4,0); --QRG Protected Animals
+		e.other:Faction(347, -7,0); --Unkempt Druids
+		e.other:Faction(135, 4,0);   --Guards of Qeynos
 		e.other:AddEXP(16000);
-		e.other:GiveCash(0,8,2,0);
+		e.other:GiveCash(0,math.random(10),math.random(5),0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
