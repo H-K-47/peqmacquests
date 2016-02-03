@@ -4,7 +4,7 @@ function event_say(e)
 		e.self:Say(string.format("Greetings, %s! Nesiff Tallaherd, owner and operator of Nesiff's Wooden Weapons, at your service. I am the finest woodworker in all of Qeynos. Even the Qeynos Guard uses my arrows, thanks to [Guard Weleth].",e.other:GetName()));
 	elseif(e.message:findi("guard weleth")) then
 		e.self:Say("Guard Weleth is like a son to me. He is responsible for purchasing supplies for the Qeynos Guard. He buys arrows from me. He is usually stationed near the North Gate.");
-	elseif(e.message:findi("tax collection")) then
+	elseif(e.message:findi("tax")) then
 		e.self:Say("Tax time again already?? It seems like I just paid yesterday.. High taxes and low sales mean I won't be able to stay in business much longer. Good thing ol' Weleth is taking care of me. Here are my taxes.");
 		e.other:Faction(217,-1,0);
 		e.other:SummonItem(13173);
@@ -20,6 +20,7 @@ function event_trade(e)
 		e.self:Say("Oh dear. I hope my mistake will not bring too much grief down on poor Weleth. He was told not to order arrows from me after the last time I fouled up their shipment. But Weleth knew I needed the account to stay in business. Could you please rush this new invoice to him right away? Thank you.");
 		e.other:SummonItem(18824); -- Slip of Parchment
 		e.other:Ding();
+		-- confirmed live factions
 		e.other:Faction(217,5,0); -- Merchants of Qeynos
 		e.other:Faction(33,-1,0); -- Circle Of Unseen Hands
 		e.other:Faction(9,1,0); -- Antonius Bayle
@@ -30,6 +31,7 @@ function event_trade(e)
 		e.self:Say("Oh.  Vesteri sent you?  Here you go.  I hope Te'Anara likes it.");
 		e.other:SummonItem(13864);
 		e.other:Ding();
+		-- confirmed live factions
 		e.other:Faction(217,1,0); -- Merchants of Qeynos
 		e.other:Faction(33,-1,0); -- Circle Of Unseen Hands
 		e.other:Faction(9,1,0); -- Antonius Bayle

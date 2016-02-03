@@ -7,7 +7,7 @@ function event_say(e)
 		e.self:Say("Milea Clothspinner. She was my one true love. She, too, is a Steel Warrior. When she left Qeynos to find adventure, my heart left also. I never saw her again, but I decided to transfer my skills to Freeport. It is probably best that I did not find her. She was in love with adventure. sigh> The women I am attracted to are always in love with another. Just like [Toala].");
 	elseif(e.message:findi("Toala")) then
 		e.self:Say("Toala is supreme when it comes to the blade, but in the art of passion she chooses to leans toward Cain Darkmoore. I do not get it. She is a very beautiful and strong-hearted warrior. Why Cain does not like her is a mystery to me. Why does she waste her time when she could have me? After all, we men of Qeynos are known as the most romantic in all of Norrath.");
-	elseif(e.message:findi("milea is in east karana")) then
+	elseif(e.message:findi("in east karana")) then
 		e.self:Say("You have seen Milea Clothspinner!! This is great news. I wish I could travel to see her, but Cain will not allow me to do so at this time. You must take her a note for me. Here, take this to her. As a master in this order, I command you to do so immediately. Go!!");
 		e.other:SummonItem(18934); -- A Sealed Letter ID- 18934 - 'LoveToMilea'
 	elseif(fac < 5) then
