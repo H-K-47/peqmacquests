@@ -45,8 +45,18 @@ function event_trade(e)
 		e.other:Faction(267, 4,0); --QRG Protected Animals
 		e.other:Faction(347, -7,0); --Unkempt Druids
 		e.other:Faction(135, 4,0);   --Guards of Qeynos
-		e.other:AddEXP(16000);
+		e.other:AddEXP(5000);
 		e.other:GiveCash(0,math.random(10),math.random(5),0);
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18806})) then -- Sealed Letter [Note To Jaggedpine - fake]
+		e.self:Say("This is dreadful news. We have been nothing but kind neighbors to Qeynos. Now Antonius Bayle wishes to abuse our friendship. This will not sit well with the others. Begone, messenger!");
+		e.other:Ding();
+		-- confirmed live factions		
+		e.other:Faction(159, -30,0); --Jaggedpine Treefolk
+		e.other:Faction(265, -7,0); --Protectors of Pine
+		e.other:Faction(267, -4,0); --QRG Protected Animals
+		e.other:Faction(347, 7,0); --Unkempt Druids
+		e.other:Faction(135, -4,0);   --Guards of Qeynos
+		e.other:AddEXP(5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
