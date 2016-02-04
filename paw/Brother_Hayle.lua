@@ -13,12 +13,13 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18927})) then -- Temple Summons
 		e.self:Say("I am needed!! What am I doing here? I must return to the Temple of Life to commune with the Prime Healer. Rodcet Nife will give me more strength to finish this job. Thank you, young one! Take this key as a reward. Turn it into Tyokan in the temple shop. Safe journey to you!");
-		e.other:Faction(257,5,0); 		-- Priest of Life
-		e.other:Faction(183,5,0); 		-- Knights of Thunder
-		e.other:Faction(135,5,0); 		-- Guards of Qeynos
+		-- confirmed live factions
+		e.other:Faction(257,20,0); 		-- Priest of Life
+		e.other:Faction(183,6,0); 		-- Knights of Thunder
+		e.other:Faction(135,10,0); 		-- Guards of Qeynos
 		e.other:Faction(21,-5,0); 		-- BloodSabers
-		e.other:Faction(9,5,0); 		-- Antonious Bayle
-		e.other:QuestReward(e.self,0,0,0,0,13306,200);
+		e.other:Faction(9,3,0); 		-- Antonious Bayle
+		e.other:QuestReward(e.self,0,0,0,0,13306,200); -- T.O.L. 2020
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18936})) then -- A Sealed Note
 		e.self:Say("Finally!! I see that Ariska has found a noble knight to retrieve Soulfire. Per Ariska's orders I am not to give Soulfire to you until you can show me [proof of nobility]. You must honor both the Temple of Life as well as the Hall of Truth and to a high degree. Only then shall you hold Soulfire.");

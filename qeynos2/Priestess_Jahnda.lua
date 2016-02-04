@@ -22,6 +22,10 @@ function event_trade(e)
 		e.other:Faction(21,-25,0); -- Bloodsabers
 		e.other:Faction(9,15,0); -- Antonius Bayle
 		e.other:AddEXP(100);
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13911})) then -- PrayerBeads
+		e.self:Say("Oh my word!! This is terrible news. This belongs to Hayle Mool. He has been captured by the Splitpaw Clan while in Karana. You must go to his aid. We cannot do so at this time. Here. Be sure to hand him this summons. I will need to speak with him.");
+		e.other:SummonItem(18927); -- Temple Summons
+		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

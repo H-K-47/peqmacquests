@@ -32,13 +32,14 @@ function event_trade(e)
 		e.self:Say("Thank you. Now I may cleanse the bodies of the new converts and help them enter into a new life. I also have this. It was given to me by a dying gnoll of all things. They belong to Brother Hayle. The gnoll's last words were 'Free him.' Make sure High Priestess Jahnda gets this. Be swift!");
 		e.other:SummonItem(13911);
 		e.other:Ding();
-		e.other:Faction(257,10,0);
-		e.other:Faction(183,10,0);
-		e.other:Faction(135,10,0);
-		e.other:Faction(21,-10,0);
-		e.other:Faction(9,10,0);
+		--confirmed live factions
+		e.other:Faction(257,15,0);
+		e.other:Faction(183,4,0);
+		e.other:Faction(135,7,0);
+		e.other:Faction(21,-3,0);
+		e.other:Faction(9,2,0);
 		e.other:AddEXP(500);
-		e.other:GiveCash(0,1,0,0);
+		e.other:GiveCash(math.random(10),math.random(10),0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
