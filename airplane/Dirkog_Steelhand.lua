@@ -23,7 +23,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {platinum == 500}, 0)) then
+	if(item_lib.check_turn_in(e.self, e.trade, {platinum = 500}, 0)) then
 		e.self:Say("Thank ye, laddie! He's awaitin' ya up top!");
 		eq.spawn2(71091,0,0,-586,767,176,64);
 		eq.depop();

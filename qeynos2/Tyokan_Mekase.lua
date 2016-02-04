@@ -17,8 +17,12 @@ function event_trade(e)
 		e.self:Say("Oh, turning in your key, are you? Very well, defender of life. Here you are.");
 		e.other:SummonItem(eq.ChooseRandom(15126,15126,15248));
 		e.other:Ding();
-	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13306})) then -- must be amiable
-	
+	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13296, gold=100})) then -- must be amiable
+		e.self:Say("I see your beads need to be charged. Very well, here you are. Use them and good health to you!!!");
+		e.other:SummonItem(13296);
+--	elseif(e.other:GetFaction(e.self) < 5 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13296})) then -- must be amiable
+--		e.self:Say("As instructed by High Priestess Jahnda I must ask for the beads and a donation of 100 gold coins.");
+--		e.other:SummonItem(13296); -- TODO how to return prayer beats exactly as given e.g. 0 charges ?
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
