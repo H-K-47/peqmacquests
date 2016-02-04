@@ -34,11 +34,12 @@ function event_trade(e)
 			e.self:Say("We thank you for your service. With Lord Grimrot's evil soul trapped in this scythe, all but the truly evil shadowknights would be able to wield it. I would like to present you with this as a token of our appreciation. Your devotion to life is supreme. Go now, and serve life.");
 			e.other:SummonItem(12238); -- Aegis of Life ID: 12238
 			e.other:Ding();
-			e.other:Faction(257,30,0); -- Priest of Life
-			e.other:Faction(183,30,0); -- Knight of Thunder
-			e.other:Faction(135,30,0); -- Guards of Qeynos
-			e.other:Faction(21,-55,0); -- Bloodsabers
-			e.other:Faction(9,30,0); -- Antonius Bayle
+			-- confirmed live factions
+			e.other:Faction(257,1,0); -- Priest of Life
+			e.other:Faction(183,1,0); -- Knight of Thunder
+			e.other:Faction(135,2,0); -- Guards of Qeynos
+			e.other:Faction(21,-1,0); -- Bloodsabers
+			e.other:Faction(9,1,0); -- Antonius Bayle
 			e.other:AddEXP(1000);
 			e.other:GiveCash(0,0,0,9);
 		end

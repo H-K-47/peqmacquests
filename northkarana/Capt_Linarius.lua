@@ -23,13 +23,14 @@ function event_trade(e)
 		e.self:Say("What a pity. Such a promising soldier. I thank you for ridding us of this corruption and offer you this as a reward. It is nothing more than junk which littered the roadways of the Plains of Karana. I hope you can find a use for it.");
 		e.other:SummonItem(eq.ChooseRandom(5369,9002)); -- Bunker Battle Blade , Round Shield
 		e.other:Ding();
+		-- confirmed live factions
 		e.other:Faction(135,10,0); -- Guards of Qeynos
-		e.other:Faction(9,10,0); -- Antonius Bayle
-		e.other:Faction(53,-10,0); -- Corrupt Qeynos Guards
-		e.other:Faction(33,-10,0); -- Circle Of Unseen Hands
-		e.other:Faction(217,10,0); -- Merchants of Qeynos 
+		e.other:Faction(9,1,0); -- Antonius Bayle
+		e.other:Faction(53,-1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(33,-2,0); -- Circle Of Unseen Hands
+		e.other:Faction(217,1,0); -- Merchants of Qeynos 
 		e.other:AddEXP(2000);
-		e.other:GiveCash(19,0,8,0);
+		e.other:GiveCash(math.random(20),0,math.random(10),0);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13304})) then -- Loyal Guards Bracelet (Guard Bracelet - 13304)
 		e.self:Say("You fool!!! You have slain a loyal defender of the guard!  Prepare to DIE!!!"); -- text made up
 		eq.attack(e.other:GetName());

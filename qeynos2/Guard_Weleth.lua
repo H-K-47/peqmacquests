@@ -1,13 +1,13 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail, %s. My name is Weleth Nagoh. In addition to my patrol, I am in charge of keeping the guardhouse stocked with supplies. I must get back to my duties. Farewell.",e.other:GetName()));
-	elseif(e.message:findi("crate")) then
-		e.self:Say("Oh, we just received a shipment of arrows from [Nesiff] in South Qeynos. The arrows in this box are missing their fletchings and I can't leave my patrol to take them back.");
 	elseif(e.message:findi("nesiff")) then
 		e.self:Say("Nesiff Tallaherd owns the wooden weapons shop in Merchant's Square in South Qeynos.");
 	elseif(e.message:findi("arrows")) then
 		e.self:Say("Oh, thank you! Here is the crate. Make sure [Nesiff] sends me back a new invoice. [Lieutenant Dagarok] would have my head if he found out this happened again!");
 		e.other:SummonItem(13925); -- Crate of Defective Arrows
+	elseif(e.message:findi("crate")) then
+		e.self:Say("Oh, we just received a shipment of arrows from [Nesiff] in South Qeynos. The arrows in this box are missing their fletchings and I can't leave my patrol to take them back.");
 	elseif(e.message:findi("Lieutenant Dagarok")) then
 		e.self:Say("Lieutenant Dagarok is the officer in charge of all of North Qeynos.  He is difficult to get along with and I [do not trust him].");
 	elseif(e.message:findi("do not trust him")) then
