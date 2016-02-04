@@ -6,7 +6,11 @@ function event_say(e)
 			e.self:Say("Your mere presence disgusts me. Please remove yourself from my sight. Until you change yourself and your ways, you are unwelcome in the Temple of Life.");
 		else
 			e.self:Say("The scroll strongboxes are merely personal safes. Most of the members use them. I am afraid all are taken, but if you are here to remove a scroll, merely hand me your key and I shall get it for you. I handle all 20 numbered keys and [Whysia] handles all 30 and 40 numbered keys.");
-		end			
+		end		
+	elseif(e.message:findi("whysia")) then
+		e.self:Say("Whysia works the night shift here.  She is quite the night owl.");
+	elseif(e.message:findi("prayer beads")) then
+		e.self:Say("The prayer beads are the blessed necklaces of the Priests of Life.  The beads have a few charges of minor healing.  I recharge them for all members in  good standing.  All I need are the beads and a donation of 100 gold pieces.");
 	end
 end
 
